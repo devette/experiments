@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://www.example.org/reasoners/restrictions#"
+	xml:base="http://www.example.org/reasoners/restrictions#">
+
+	<!-- This file is an OWL ontology -->
+	<owl:Ontology rdf:about="">
+		<!-- We want to make an example of defining class restrictions in OWL -->
+		<rdfs:comment>This is an example of defining a set of class
+			restrictions in
+			OWL.
+			This example works correctly only using the /owl2
+			Hermit Reasoning
+			Service, because the Jena OWL reasoner does not
+			support the owl:oneOf
+			construct.
+		</rdfs:comment>
+	</owl:Ontology>
+
+	<!-- any employer must have some features: firstname, familyname, email 
+		and worksAt (in one of the allowed places) -->
+	<owl:Class rdf:about="#Employee">
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="#Person" />
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="#firstname" />
+						<owl:someValuesFrom rdf:resource="&rdfs;Literal" />
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="#familyname" />
+						<owl:someValuesFrom rdf:resource="&rdfs;Literal" />
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="#email" />
+						<owl:someValuesFrom rdf:resource="&rdfs;Literal" />
+					</owl:Restriction>
+					<!-- -->
+					<!-- Let's say that Employers can work only in #Rome , #Catania and 
+						#Bologna -->
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="#worksAt" />
+						<owl:someValuesFrom>
+							<owl:Class>
+								<owl:oneOf rdf:parseType="Collection">
+									<owl:Thing rdf:about="#Rome" />
+									<owl:Thing rdf:about="#Catania" />
+									<owl:Thing rdf:about="#Bologna" />
+								</owl:oneOf>
+							</owl:Class>
+						</owl:someValuesFrom>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:about="#firstname" />
+	<owl:DatatypeProperty rdf:about="#familyname" />
+	<owl:DatatypeProperty rdf:about="#email" />
+
+	<!-- #worksAt has range #Place -->
+	<owl:ObjectProperty rdf:about="#worksAt">
+		<rdfs:range rdf:resource="#Place" />
+	</owl:ObjectProperty>
+
+	<!-- all the following places are distinct (no synonyms here) -->
+	<owl:AllDifferent>
+		<owl:distinctMembers rdf:parseType="Collection">
+			<owl:Thing rdf:about="#Rome" />
+			<owl:Thing rdf:about="#Catania" />
+			<owl:Thing rdf:about="#Bologna" />
+			<owl:Thing rdf:about="#Moricone" />
+		</owl:distinctMembers>
+	</owl:AllDifferent>
+
+
+	<!-- enridaga, to be an employer, must fulfill the restrictions defined 
+		for the class #Employee. -->
+	<Person rdf:about="#enridaga">
+		<!-- If you comment one of the next 4 statement, you won't have #enridaga 
+			to result as #Employee. -->
+		<firstname>Enrico</firstname>
+		<familyname>Daga</familyname>
+		<email>enridaga@example.org</email>
+		<worksAt rdf:resource="#Catania" />
+
+		<!-- If you uncomment the two statements below you will obtain an inconsistency, 
+			because #Moricone is not an allowed place for developers -->
+		<!-- <worksAt rdf:resource="#Moricone" /> <rdf:type rdf:resource="#Employee" 
+			/> -->
+	</Person>
+
+</rdf:RDF>

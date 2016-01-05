@@ -1,0 +1,52 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:ex="http://www.example.org/reasoners/some-values-from#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns="http://www.example.org/reasoners/some-values-from#" xml:base="http://www.example.org/reasoners/some-values-from#">
+
+	<!-- This file is an OWL ontology -->
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>This is an example of the usage of owl:someValuesFrom
+		</rdfs:comment>
+		<rdfs:comment>This example works with:
+			* /owl (the Jena OWL reasoner)
+			* /owl2 (the Hermit Reasoning Service).
+
+			This example does not work with /rdfs, and does not work
+			with /owlmini, because the Jena OWL(mini) reasoner
+			omits the
+			forward entailments for owl:someValuesFrom restrictions.
+		</rdfs:comment>
+	</owl:Ontology>
+
+	<!-- john, is an developer, but we don't know anything else -->
+	<ex:Developer rdf:about="#john">
+	</ex:Developer>
+
+	<!-- a #SoftwareCompany is a kind of #Organization -->
+	<owl:Class rdf:about="SoftwareCompany">
+		<rdfs:subClassOf rdf:resource="#Organization" />
+	</owl:Class>
+
+	<!-- #Developers #worksAt some #SoftwareCompany (they are not the only one..., 
+		this is why we use owl:subClassOf) -->
+	<owl:Class rdf:about="#Developer">
+		<rdfs:subClassOf>
+			<owl:restriction>
+				<owl:onProperty rdf:resource="#worksAt" />
+				<owl:someValuesFrom rdf:resource="#SoftwareCompany" />
+			</owl:restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- Employers are all who #worksAt any kind of Organization (owl:equivalentClass) -->
+	<owl:Class rdf:about="#Employee">
+		<owl:equivalentClass>
+			<owl:restriction>
+				<owl:onProperty rdf:resource="#worksAt" />
+				<owl:someValuesFrom rdf:resource="#Organization" />
+			</owl:restriction>
+		</owl:equivalentClass>
+	</owl:Class>
+
+	<!-- We expect a reasoner to state that John is an #Employee -->
+</rdf:RDF>

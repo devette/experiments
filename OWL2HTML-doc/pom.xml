@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.yeex.knowledge</groupId>
+  <artifactId>OWL2HTML-doc</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>OWL 2 HTML Documentation</name>
+  <description>OWL 2 HTML documentation generation</description>
+  
+  	<properties>
+   		 <owl2html.version>1.0-SNAPSHOT</owl2html.version>
+	</properties>
+	
+	<build>
+		<plugins>
+
+			<!-- running the plugin -->
+			<plugin>
+				<groupId>nl.yeex.knowledge</groupId>
+				<artifactId>OWL2HTML-plugin</artifactId>
+				<version>${owl2html.version}</version>
+
+				<configuration>
+					<!--##  INPUT OPTIONS ##-->
+					<owlSourceFile>${project.basedir}/../OWL2HTML-app/src/main/resources/owl/calim.owl</owlSourceFile>
+
+					<!--  inputDirectory: directory with owl files for generation. (ensure read access!) -->
+					<inputDirectory>${project.basedir}/../OWL2HTML-app/src/main/resources/owl</inputDirectory>
+
+					<!--##  GENERATION TEMPLATES ##-->
+					<!--  themesDirectory: directory with the freemarker templates used for generation -->
+					<themesDirectory>${project.basedir}/../OWL2HTML-app/src/main/resources/themes/</themesDirectory>
+
+					<!--  theme: must be an existing subdirectory in the themesdirectory -->
+					<theme>eshopper</theme>
+
+					<!--##  OUTPUT OPTIONS ##-->
+					<!--  outputDirectory: directory where generated html files will be written. (ensure write access!) -->
+					<outputDirectory>target/outputPlugin/</outputDirectory>
+
+					<!--  inferenceenabled: possible values (true|false) -->
+					<inferenceenabled>false</inferenceenabled>
+
+					<!--  generation: possible values (online|offline) -->
+					<generation>offline</generation>
+
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>process-resources</phase>
+
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+	    	<plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.3</version>
+	            <configuration>
+	                <source>1.7</source>
+	                <target>1.7</target>
+	            </configuration>
+	        </plugin>
+	     
+		</plugins>
+	</build>
+</project>

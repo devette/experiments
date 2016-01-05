@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>nl.yeex.knowledge</groupId>
+	<artifactId>root-pom</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>OWL 2 HTML Utilities</name>
+	<url>https://github.com/devette/experiments</url>
+
+
+	<modules>
+		<module>OWL2HTML</module>
+		<module>OWL2HTML-app</module>
+		<module>OWL2HTML-doc</module>
+		<module>OWL2HTML-plugin</module>
+		<module>OWL2HTML-web</module>
+	</modules>
+
+	<scm>
+		<url>https://github.com/kevinsawicki/devette/experiments</url>
+		<connection>scm:git:git://github.com/devette/experiments.git</connection>
+		<developerConnection>scm:git:git@github.com:devette/experiments.git</developerConnection>
+	</scm>
+
+</project>

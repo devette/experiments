@@ -1,0 +1,136 @@
+#menu {
+    float: left;
+    height: 100%;
+    
+}
+
+#content {
+    float: right;
+    width: 80%;
+    padding: 10px;
+    background-color:#FFF;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #EEE;
+}
+
+#footer {
+    clear: both;
+}
+
+body{
+	background-color: #9cc;
+}
+ 
+#navigation {
+    width: 150px;
+    font-size: 0.75em;
+}
+#navigation ul {
+    margin: 0px;
+    padding: 0px;
+}
+ul.top-level { 
+
+	background: #8b8b8b; /* for non-css3 browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#a9a9a9', endColorstr='#7a7a7a'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#a9a9a9), to(#7a7a7a)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #a9a9a9,  #7a7a7a); /* for firefox 3.6+ */
+	
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+	
+#navigation li {
+	 list-style: none; 
+	 
+}
+
+ul.top-level li {
+    border-bottom: #fff solid;
+    border-top: #fff solid;
+    border-width: 1px;
+}
+
+#navigation a {
+	color: #fff;
+	cursor: pointer;
+	display:block;
+	height:25px;
+	line-height: 25px;
+	text-indent: 10px;					
+	text-decoration:none;
+	width:100%;
+}
+
+#navigation a:hover { 
+	text-decoration:underline;	
+}
+
+#navigation li:hover {
+    background: #f90;
+    position: relative;
+}
+
+ul.sub-level { 
+	display: none; 
+}
+
+li:hover .sub-level {
+    background: #999;
+    border: #fff solid;
+    border-width: 1px;
+    display: block;
+    position: absolute;
+    left: 75px;
+    top: 5px;
+}
+
+ul.sub-level li {
+	border: none;
+	float:left;
+	width:150px; 
+}
+
+#navigation .sub-level { 
+	background: #999; 
+}
+
+#navigation .sub-level .sub-level {
+	background: #09C; 
+}
+					
+/*IE RESET HELPER*/
+li:hover .sub-level .sub-level { display:none; }
+.sub-level li:hover .sub-level { display:block; }
+
+
+table {
+    border-collapse: collapse;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top: 3px solid #88AACC;
+    border-bottom: 3px solid #88AACC;
+    empty-cells: show;
+    padding: 0;
+    width: 100%;
+}
+
+div, p, table {
+    font: 0.9em/1.3em Verdana,Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding-left: 1px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+h1  {
+	font: 1.2em Verdana,Helvetica,Arial,sans-serif;
+}

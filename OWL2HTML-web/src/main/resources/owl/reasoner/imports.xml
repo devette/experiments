@@ -1,0 +1,33 @@
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:ex="http://www.example.org/reasoners/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns="http://www.example.org/reasoners/imports/">
+
+	<!-- This file is an OWL ontology -->
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>
+		This is an example of using the owl:imports statement.
+		owl:imports is supported by:
+		* the Jena OWL reasoning service
+		* the Jena OWLMini reasoning service
+		* the Hermit reasoning service
+		It will be not considered by the Jena RDFS reasoner
+		</rdfs:comment>
+		<rdfs:comment>
+		The FOAF ontology contains alignments with Dublin Core.
+		Classifying this snippet will produce that all the istances of foaf:Person are also dc:Person . 
+		</rdfs:comment>
+		<!-- We want to reuse all logical statements of the Friend of a Friend ontology -->
+		<owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+	</owl:Ontology>
+	
+	<!-- enridaga and alexdma are persons -->
+	<foaf:Person rdf:about="http://www.example.org/reasoners/enridaga"/>
+	<foaf:Person rdf:about="http://www.example.org/reasoners/alexdma"/>
+	
+	
+</rdf:RDF>

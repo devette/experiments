@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nl.yeex.knowledge</groupId>
+	<artifactId>OWL2HTML-web</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>OWL 2 HTML Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+   		 <owl2html.version>1.0-SNAPSHOT</owl2html.version>
+   		 <jetty.version>9.2.9.v20150224</jetty.version>
+   		 <junit.version>3.8.1</junit.version>
+   		 <logback.version>1.0.13</logback.version>
+   		 <groovy.version>2.4.3</groovy.version>
+   		 <json-simple.version>1.1.1</json-simple.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>nl.yeex.knowledge</groupId>
+			<artifactId>OWL2HTML</artifactId>
+			<version>${owl2html.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>${json-simple.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+	
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${logback.version}</version>
+		</dependency>
+		
+		<dependency>
+			<!-- tbv logback.groovy configuration -->
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>${groovy.version}</version>
+		</dependency>
+		
+		<!--  Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<finalName>OWL2HTML-web</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.11.v20150529</version>
+				<configuration>
+					<systemProperties>
+						<systemProperty>
+							<name>DOCUMENT_ROOT</name>
+							<value>${project.basedir}/src/main/resources/</value>
+						</systemProperty>
+					</systemProperties>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppSourceDirectory>src/main/resources</webAppSourceDirectory>
+					<webApp>
+						<contextPath>/OWL2HTML-web</contextPath>
+						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+							<resourcesAsCSV>${project.basedir}/src/main/webapp/,${project.basedir}/src/main/resources,${project.basedir}/../OWL2HTML-doc/src/main/resources/</resourcesAsCSV>
+						</baseResource>
+					</webApp>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/resources</directory>
+						</resource>
+					</webResources>
+				</configuration>
+				
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>perform</goal>
+						</goals>
+						<configuration>
+							<pomFileName>pom.xml</pomFileName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.3</version>
+	            <configuration>
+	                <source>1.7</source>
+	                <target>1.7</target>
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</build>
+
+	<scm>
+		<developerConnection>scm:git:file:///Users/herman/Documents/develop/gitrepo/LocalDevelopment/.git</developerConnection>
+	</scm>
+</project>

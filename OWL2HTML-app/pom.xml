@@ -1,0 +1,158 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>nl.yeex.knowledge</groupId>
+	<artifactId>OWL2HTML-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>OWL 2 HTML App</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		 <owl2html.version>1.0-SNAPSHOT</owl2html.version>
+   		 <commons-cli.version>1.2</commons-cli.version>
+   		 <commons-io.version>2.4</commons-io.version>
+   		 <freemarker.version>2.3.19</freemarker.version>
+   		 <owlapi.version>4.1.0</owlapi.version>
+   		 <hermit.version>1.3.8.5-SNAPSHOT</hermit.version>
+   		 <junit.version>4.8.2</junit.version>
+   		 <suntools.version>1.5.0</suntools.version>
+   		 <graphstream.version>1.2</graphstream.version>
+   		 <logback.version>1.0.13</logback.version>
+   		 <groovy.version>2.4.3</groovy.version>
+   		 <jetty.version>9.2.9.v20150224</jetty.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>${commons-cli.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+
+
+		<!-- dependency does not exist in maven mirrors. add to local repository! 
+			<dependency> <groupId>owlapi</groupId> <artifactId>owlapi-bin</artifactId> 
+			<version>1.0</version> </dependency> -->
+
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-distribution</artifactId>
+			<version>${owlapi.version}</version>
+		</dependency>
+		
+		 <dependency>
+		  <groupId>nl.yeex.knowledge</groupId>
+		  <artifactId>OWL2HTML</artifactId>
+		  <version>${owl2html.version}</version>
+	    </dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.hermit-reasoner</groupId>
+			<artifactId>org.semanticweb.hermit</artifactId>
+			<version>${hermit.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>tools</artifactId>
+			<version>${suntools.version}</version>
+			<scope>system</scope>
+			<systemPath>${java.home}/../lib/tools.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<artifactId>gs-core</artifactId>
+			<groupId>org.graphstream</groupId>
+			<version>${graphstream.version}</version>
+			<optional>false</optional>
+		</dependency>
+
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${logback.version}</version>
+		</dependency>
+		
+		<dependency>
+			<!-- tbv logback.groovy configuration -->
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>${groovy.version}</version>
+		</dependency>
+		
+		<!--  Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+
+		    <plugin>
+		      <artifactId>maven-assembly-plugin</artifactId>
+		      <configuration>
+		        <archive>
+		          <manifest>
+		            <mainClass>nl.yeex.knowledge.Main</mainClass>
+		          </manifest>
+		        </archive>
+		        <descriptorRefs>
+		          <descriptorRef>jar-with-dependencies</descriptorRef>
+		        </descriptorRefs>
+		      </configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+		    </plugin>
+
+	    	<plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.3</version>
+	            <configuration>
+	                <source>1.7</source>
+	                <target>1.7</target>
+	            </configuration>
+	        </plugin>
+
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,36 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:ex="http://www.example.org/reasoners/" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns="http://www.example.org/reasoners/symmetric#"
+	xml:base="http://www.example.org/reasoners/symmetric#">
+
+	<!-- This file is an OWL ontology -->
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>This is an example of a symmetric and transitive property assertion
+		</rdfs:comment>
+		<rdfs:comment>This example works with:
+			* /owl (the Jena OWL reasoner)
+			* /owlmini (the Jena OWLMini reasoner)
+			* /owl2 (the Hermit Reasoning Service)
+		</rdfs:comment>
+	</owl:Ontology>
+
+	<!-- ogrisel, enridaga and alexdma are developers -->
+	<ex:Developer rdf:about="#enridaga" />
+	<ex:Developer rdf:about="#ogrisel" />
+	<ex:Developer rdf:about="#alexdma" />
+
+	<!-- We know:
+	 #alexdma #workedTogheter #enridaga and #ogrisel 
+	-->
+	<rdf:Description rdf:about="#alexdma">
+		<workedTogheter rdf:resource="#ogrisel"/>
+		<workedTogheter rdf:resource="#enridaga"/>
+	</rdf:Description>
+
+	<!-- #workedTogheter is an owl:SymmetricProperty (well, this is an example...) -->
+	<owl:SymmetricProperty rdf:about="#workedTogheter"/>
+	<!-- #workedTogheter is also a owl:TransitiveProperty (well, this is an example...) -->
+	<owl:TransitiveProperty rdf:about="#workedTogheter"/>
+	
+</rdf:RDF>

@@ -1,0 +1,906 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/calim"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/calim">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://localhost:8080/OWL2HTML-web/owl/cause_classification.skos.xml</Import>
+    <Import>http://localhost:8080/OWL2HTML-web/owl/wgs84_pos.owl</Import>
+    <Declaration>
+        <Class IRI="#Analyse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apotheek"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Barriere"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Betrokkene"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calamiteit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Client"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conclusie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Derde"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maatregel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medewerker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oorzaak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organisatie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Overlijden"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persoon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Team"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ZiekenhuisOpname"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#betrokkenInAnalyse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conclusieVanAnalyse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#daardoor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBetrokkenBijFeit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBetrokkene"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMaatregelTegenFeit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOorzaakVan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#oorzaakVanCalamiteit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teNemenAnalyseMaatregel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#waarom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#geboortedatum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#geslacht"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#naam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Afspraak_over_rollator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Analyse1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Analyse2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Analyse3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Arnhem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ede"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kees"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mirjam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nieuwe_Huisstijl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peter_Tienusma"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Piet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#calamiteit1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#calamiteit2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#calimiteit2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#conclusie1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_naarKamerGebracht"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_rollatorInWoonkamer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_rollatorNietGebruikt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#feit_verkeerdeMedicatieIngenomen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#patient_was_boos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vader_kwam_niet_opdagen_bij_afspraak"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Apotheek"/>
+        <Class IRI="#Organisatie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arts"/>
+        <Class IRI="#Derde"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calamiteit"/>
+        <Class IRI="#Feit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Client"/>
+        <Class IRI="#Persoon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Derde"/>
+        <Class IRI="#Persoon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medewerker"/>
+        <Class IRI="#Persoon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oorzaak"/>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organisatie"/>
+        <Class IRI="#Betrokkene"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Overlijden"/>
+        <Class IRI="#Calamiteit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Persoon"/>
+        <Class IRI="#Betrokkene"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Team"/>
+        <Class IRI="#Betrokkene"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZiekenhuisOpname"/>
+        <Class IRI="#Calamiteit"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Organisatie"/>
+        <Class IRI="#Persoon"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organisatie"/>
+        <Class IRI="#Team"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Persoon"/>
+        <Class IRI="#Team"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Maatregel"/>
+        <NamedIndividual IRI="#Afspraak_over_rollator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Analyse"/>
+        <NamedIndividual IRI="#Analyse1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Analyse"/>
+        <NamedIndividual IRI="#Analyse2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Analyse"/>
+        <NamedIndividual IRI="#Analyse3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Apotheek"/>
+        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <NamedIndividual IRI="#Arnhem"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <NamedIndividual IRI="#Ede"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Medewerker"/>
+        <NamedIndividual IRI="#Kees"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Medewerker"/>
+        <NamedIndividual IRI="#Mirjam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Client"/>
+        <NamedIndividual IRI="#Peter_Tienusma"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Client"/>
+        <NamedIndividual IRI="#Piet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Organisatie"/>
+        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Calamiteit"/>
+        <NamedIndividual IRI="#calamiteit1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ZiekenhuisOpname"/>
+        <NamedIndividual IRI="#calamiteit2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Calamiteit"/>
+        <NamedIndividual IRI="#calimiteit2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Conclusie"/>
+        <NamedIndividual IRI="#conclusie1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_naarKamerGebracht"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_rollatorInWoonkamer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_rollatorNietGebruikt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#feit_verkeerdeMedicatieIngenomen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#patient_was_boos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#vader_kwam_niet_opdagen_bij_afspraak"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#conclusieVanAnalyse"/>
+        <NamedIndividual IRI="#Analyse1"/>
+        <NamedIndividual IRI="#conclusie1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+        <NamedIndividual IRI="#Analyse1"/>
+        <NamedIndividual IRI="#calamiteit1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+        <NamedIndividual IRI="#Analyse2"/>
+        <NamedIndividual IRI="#calimiteit2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+        <NamedIndividual IRI="#Analyse3"/>
+        <NamedIndividual IRI="#calamiteit2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Ede"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+        <NamedIndividual IRI="#Arnhem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#calamiteit1"/>
+        <NamedIndividual IRI="#Piet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#calamiteit1"/>
+        <NamedIndividual IRI="#feit_rollatorNietGebruikt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#calamiteit2"/>
+        <NamedIndividual IRI="#feit_verkeerdeMedicatieIngenomen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#calimiteit2"/>
+        <NamedIndividual IRI="#Peter_Tienusma"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#calimiteit2"/>
+        <NamedIndividual IRI="#Kees"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#calimiteit2"/>
+        <NamedIndividual IRI="#patient_was_boos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
+        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+        <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
+        <NamedIndividual IRI="#Nieuwe_Huisstijl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+        <NamedIndividual IRI="http://localhost/cause/organizational/protocolavailability"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+        <NamedIndividual IRI="#Afspraak_over_rollator"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_naarKamerGebracht"/>
+        <NamedIndividual IRI="#feit_geenAfspraakOverRollator"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_rollatorInWoonkamer"/>
+        <NamedIndividual IRI="#feit_naarKamerGebracht"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_rollatorNietGebruikt"/>
+        <NamedIndividual IRI="#feit_rollatorInWoonkamer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+        <NamedIndividual IRI="#Kees"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+        <NamedIndividual IRI="http://localhost/cause/human/workpressure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+        <NamedIndividual IRI="#feit_vergetenOpTeSchrijven"/>
+        <NamedIndividual IRI="#Afspraak_over_rollator"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
+        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
+        <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <NamedIndividual IRI="#feit_verkeerdeMedicatieIngenomen"/>
+        <NamedIndividual IRI="#Piet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#feit_verkeerdeMedicatieIngenomen"/>
+        <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#waarom"/>
+        <NamedIndividual IRI="#patient_was_boos"/>
+        <NamedIndividual IRI="#vader_kwam_niet_opdagen_bij_afspraak"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+        <NamedIndividual IRI="#Arnhem"/>
+        <Literal datatypeIRI="&xsd;decimal">51.985103400000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+        <NamedIndividual IRI="#Arnhem"/>
+        <Literal datatypeIRI="&xsd;decimal">5.898739600002400</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+        <NamedIndividual IRI="#Ede"/>
+        <Literal datatypeIRI="&xsd;decimal">52.0436111</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+        <NamedIndividual IRI="#Ede"/>
+        <Literal datatypeIRI="&xsd;decimal">5.6666666999999</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#geslacht"/>
+        <NamedIndividual IRI="#Kees"/>
+        <Literal datatypeIRI="&xsd;string">Man</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#naam"/>
+        <NamedIndividual IRI="#Kees"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Kees van Kooten</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#geslacht"/>
+        <NamedIndividual IRI="#Mirjam"/>
+        <Literal datatypeIRI="&xsd;string">Vrouw</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#naam"/>
+        <NamedIndividual IRI="#Mirjam"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mirjam van Duurstee</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#geslacht"/>
+        <NamedIndividual IRI="#Piet"/>
+        <Literal datatypeIRI="&xsd;string">Man</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#naam"/>
+        <NamedIndividual IRI="#Piet"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Piet Paulusma</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isOorzaakVan"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#daardoor"/>
+        <ObjectProperty IRI="#waarom"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isBetrokkenBijFeit"/>
+        <ObjectProperty IRI="#isBetrokkene"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isMaatregelTegenFeit"/>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isOorzaakVan"/>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#daardoor"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#waarom"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#betrokkenInAnalyse"/>
+        <Class IRI="#Analyse"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#conclusieVanAnalyse"/>
+        <Class IRI="#Analyse"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#daardoor"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBetrokkenBijFeit"/>
+        <Class IRI="#Betrokkene"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMaatregelTegenFeit"/>
+        <Class IRI="#Maatregel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOorzaakVan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isOorzaakVan"/>
+            <Class IRI="#Oorzaak"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#oorzaakVanCalamiteit"/>
+        <Class IRI="#Analyse"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teNemenAnalyseMaatregel"/>
+        <Class IRI="#Analyse"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+        <Class IRI="#Analyse"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#waarom"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#betrokkenInAnalyse"/>
+        <Class IRI="#Betrokkene"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#conclusieVanAnalyse"/>
+        <Class IRI="#Conclusie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#daardoor"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBetrokkenBijFeit"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBetrokkene"/>
+        <Class IRI="#Betrokkene"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMaatregelTegenFeit"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOorzaakVan"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#oorzaakVanCalamiteit"/>
+        <Class IRI="#Oorzaak"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#oorzaakVanFeit"/>
+        <Class IRI="#Oorzaak"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teNemenAnalyseMaatregel"/>
+        <Class IRI="#Maatregel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teNemenMaatregel"/>
+        <Class IRI="#Maatregel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+        <Class IRI="#Calamiteit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#waarom"/>
+        <Class IRI="#Feit"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+            <ObjectProperty IRI="#isBetrokkene"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#betrokkenInAnalyse"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+            <ObjectProperty IRI="#waarom"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#oorzaakVanCalamiteit"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+            <ObjectProperty IRI="#waarom"/>
+            <ObjectProperty IRI="#isBetrokkene"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#betrokkenInAnalyse"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+            <ObjectProperty IRI="#waarom"/>
+            <ObjectProperty IRI="#oorzaakVanFeit"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#oorzaakVanCalamiteit"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#teOnderzoekenCalamiteit"/>
+            <ObjectProperty IRI="#waarom"/>
+            <ObjectProperty IRI="#teNemenMaatregel"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#teNemenAnalyseMaatregel"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#geboortedatum"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#geslacht"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#naam"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#geboortedatum"/>
+        <Class IRI="#Persoon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#geslacht"/>
+        <Class IRI="#Persoon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#naam"/>
+        <Class IRI="#Betrokkene"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#geboortedatum"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Afspraak_over_rollator</IRI>
+        <Literal datatypeIRI="&xsd;string">Vastleggen afspraak over rollator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Analyse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In de analyse worden de feiten en oorzaken van een calamiteit beschreven. Hierdoor is het mogelijk te achterhalen wat de root-cause van een calamiteit is. Bij de analyse wordt tevens vastgelegd welke maatregelen kunnen worden genomen om een oorzaak in de toekomst te voorkomen.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Apotheek_Ede_Oost</IRI>
+        <Literal datatypeIRI="&xsd;string">Apotheek Ede Oost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Kees</IRI>
+        <Literal datatypeIRI="&xsd;string">Kees van Kooten</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mirjam</IRI>
+        <Literal datatypeIRI="&xsd;string">Mirjam van Duurstee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Nieuwe_Huisstijl</IRI>
+        <Literal datatypeIRI="&xsd;string">Nieuwe Huisstijl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Peter_Tienusma</IRI>
+        <Literal datatypeIRI="&xsd;string">Peter Tienusma</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Piet</IRI>
+        <Literal datatypeIRI="&xsd;string">Piet Paulusma</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ziekenhuis_Rijnstate</IRI>
+        <Literal datatypeIRI="&xsd;string">Ziekenhuis Rijnstate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#calamiteit1</IRI>
+        <Literal datatypeIRI="&xsd;string">Piet is gevallen in zijn slaapkamer K04</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calamiteit1</IRI>
+        <Literal datatypeIRI="&xsd;string">Piet gevallen in slaapkamer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calamiteit2</IRI>
+        <Literal datatypeIRI="&xsd;string">Ziekenhuisopname na verkeerd medicijn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calimiteit2</IRI>
+        <Literal datatypeIRI="&xsd;string">Medewerker aangevallen door patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#conclusie1</IRI>
+        <Literal datatypeIRI="&xsd;string">De Organisatie moet het personeel beter gaan opleiden, zodat ze minder vaak dingen vergeten.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_HuisstijlApotheek</IRI>
+        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ede Oost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_geenAfspraakOverRollator</IRI>
+        <Literal datatypeIRI="&xsd;string">Geen afspraak over rollator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_geenAfspraakOverRollator</IRI>
+        <Literal datatypeIRI="&xsd;string">Over het gebruik van de rollator is in het zorgplan geen afspraak gemaakt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feit_naarKamerGebracht</IRI>
+        <Literal datatypeIRI="&xsd;string">De avond voor de val werd de client aan de arm naar zijn slaapkamer begeleid</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_naarKamerGebracht</IRI>
+        <Literal datatypeIRI="&xsd;string">Patient naar de slaapkamer gebracht</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_rollatorInWoonkamer</IRI>
+        <Literal datatypeIRI="&xsd;string">Rollator in woonkamer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feit_rollatorNietGebruikt</IRI>
+        <Literal datatypeIRI="&xsd;string">De rollator werd niet gebruikt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_rollatorNietGebruikt</IRI>
+        <Literal datatypeIRI="&xsd;string">Rollator niet gebruikt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_vergetenOpTeSchrijven</IRI>
+        <Literal datatypeIRI="&xsd;string">Vergeten op te schrijven</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_verkeerdeKleurMedicijndoosje</IRI>
+        <Literal datatypeIRI="&xsd;string">Verkeerde kleur medicijndoosje</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_verkeerdeMedicatieIngenomen</IRI>
+        <Literal datatypeIRI="&xsd;string">Verkeerde medicatie ingenomen</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#patient_was_boos</IRI>
+        <Literal datatypeIRI="&xsd;string">Patient was boos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vader_kwam_niet_opdagen_bij_afspraak</IRI>
+        <Literal datatypeIRI="&xsd;string">Vader kwam niet opdagen bij afspraak</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

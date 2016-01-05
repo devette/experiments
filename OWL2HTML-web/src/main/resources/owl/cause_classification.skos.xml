@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" >
+  <rdf:Description rdf:about="http://localhost/cause/organizational">
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/consultationdepartment"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/responsibilities"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/transmissionbetweendepartment"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/other"/>
+    <skos:prefLabel xml:lang="nl">Organisatorisch</skos:prefLabel>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/communication"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/nutritionrecord"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/protocolavailability"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/commanddoctor"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/transmissionwithindepartment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrower rdf:resource="http://localhost/cause/organizational/planning"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/responsibilities">
+    <skos:inScheme rdf:resource="http:///thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Verantwoordelijkheden</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/maintenance">
+    <skos:prefLabel xml:lang="nl">Onderhoudsplannen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/interiorappartment">
+    <skos:prefLabel xml:lang="nl">Inrichting Appartement</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/indication">
+    <skos:prefLabel xml:lang="nl">Indicatie Stelling</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/manual">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Handleiding</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/nutritionrecord">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Dossier Voeding</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/other">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Overig Technisch</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/therapyloyalty">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Therapie Trouw</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/experience">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Ervaring</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/expertise">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Deskundigheid</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/transmissionbetweendepartment">
+    <skos:prefLabel xml:lang="nl">Overdracht Tussen Afdeling</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/beincorporated">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Ingewerkt Zijn</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/collegiality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Collegialiteit</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical">
+    <skos:narrower rdf:resource="http://localhost/cause/technical/device"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/equipment"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/accomodation"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/network"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/control"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/instructions"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/infrastructure"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/other"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/maintenance"/>
+    <skos:prefLabel xml:lang="nl">Technisch</skos:prefLabel>
+    <skos:narrower rdf:resource="http://localhost/cause/technical/manual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/protocolavailability">
+    <skos:prefLabel xml:lang="nl">Aanwezigheid Protocollen</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/autonomy">
+    <skos:prefLabel xml:lang="nl">Autonomie</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/control">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Bediening</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/instructions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Instructie</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/unknownindidividualrisks">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Onbekende Individuale Risico's</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/transmissionwithindepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Overdracht Binnen Afdeling</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/psychologicalcondition">
+    <skos:prefLabel xml:lang="nl">Psychische Conditie</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/other">
+    <skos:prefLabel xml:lang="nl">Overig Menselijk</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/communication">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Communicatie</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/indication"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/interiorappartment"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/therapyloyalty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/psychologicalcondition"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/unknownindidividualrisks"/>
+    <skos:narrower rdf:resource="http://localhost/cause/client/autonomy"/>
+    <skos:prefLabel xml:lang="nl">Cliënt</skos:prefLabel>
+    <skos:narrower rdf:resource="http://localhost/cause/client/physicalcondition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/other">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Overig Organisatorisch</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/accomodation">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Accomodatie</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human">
+    <skos:narrower rdf:resource="http://localhost/cause/human/expertise"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/attention"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/experience"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/capacity"/>
+    <skos:prefLabel xml:lang="nl">Menselijk</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/workpressure"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/collegiality"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/carefulness"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/other"/>
+    <skos:narrower rdf:resource="http://localhost/cause/human/beincorporated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/attention">
+    <skos:prefLabel xml:lang="nl">Oplettendheid</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/client/physicalcondition">
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Fysieke Conditie</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/thesaurus/cause_classification">
+    <skos:hasTopConcept rdf:resource="http://localhost/cause/technical"/>
+    <skos:hasTopConcept rdf:resource="http://localhost/cause/organizational"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:hasTopConcept rdf:resource="http://localhost/cause/human"/>
+    <skos:hasTopConcept rdf:resource="http://localhost/cause/client"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/network">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Netwerk</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/consultationdepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Overleg op Afdeling</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/device">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+    <skos:prefLabel xml:lang="nl">Hulpmiddelen</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/equipment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Apparatuur</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/workpressure">
+    <skos:prefLabel xml:lang="nl">Ervaren Werkdruk</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/capacity">
+    <skos:prefLabel xml:lang="nl">Draagkracht</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/commanddoctor">
+    <skos:prefLabel xml:lang="nl">Opdracht Arts</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/organizational/planning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Planning</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/human/carefulness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Zorgvuldigheid</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost/cause/technical/infrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="nl">Infrastructuur</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost/thesaurus/cause_classification"/>
+  </rdf:Description>
+</rdf:RDF>
