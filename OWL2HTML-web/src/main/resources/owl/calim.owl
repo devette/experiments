@@ -138,7 +138,7 @@
         <NamedIndividual IRI="#Analyse3"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Arnhem"/>
@@ -162,7 +162,7 @@
         <NamedIndividual IRI="#Piet"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+        <NamedIndividual IRI="#Ziekenhuis_ABC"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#calamiteit1"/>
@@ -284,7 +284,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Apotheek"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
@@ -312,7 +312,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Organisatie"/>
-        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+        <NamedIndividual IRI="#Ziekenhuis_ABC"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Calamiteit"/>
@@ -392,12 +392,12 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
         <NamedIndividual IRI="#Ede"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
-        <NamedIndividual IRI="#Ziekenhuis_Rijnstate"/>
+        <NamedIndividual IRI="#Ziekenhuis_ABC"/>
         <NamedIndividual IRI="#Arnhem"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -433,7 +433,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isBetrokkene"/>
         <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#oorzaakVanFeit"/>
@@ -488,7 +488,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isBetrokkene"/>
         <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#waarom"/>
@@ -775,8 +775,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Apotheek_Ede_Oost</IRI>
-        <Literal datatypeIRI="&xsd;string">Apotheek Ede Oost</Literal>
+        <IRI>#Apotheek_OnsDorp_Oost</IRI>
+        <Literal datatypeIRI="&xsd;string">Apotheek Ons Dorp Oost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -805,8 +805,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Ziekenhuis_Rijnstate</IRI>
-        <Literal datatypeIRI="&xsd;string">Ziekenhuis Rijnstate</Literal>
+        <IRI>#Ziekenhuis_ABC</IRI>
+        <Literal datatypeIRI="&xsd;string">Ziekenhuis ABC</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -836,7 +836,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_HuisstijlApotheek</IRI>
-        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ede Oost</Literal>
+        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ons Dorp Oost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

@@ -256,7 +256,7 @@
         <NamedIndividual IRI="#Analyse3"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Kees"/>
@@ -549,7 +549,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Apotheek"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Medewerker"/>
@@ -684,7 +684,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isBetrokkene"/>
         <NamedIndividual IRI="#feit_HuisstijlApotheek"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#oorzaakVanFeit"/>
@@ -729,7 +729,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isBetrokkene"/>
         <NamedIndividual IRI="#feit_verkeerdeKleurMedicijndoosje"/>
-        <NamedIndividual IRI="#Apotheek_Ede_Oost"/>
+        <NamedIndividual IRI="#Apotheek_OnsDorp_Oost"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#waarom"/>
@@ -998,8 +998,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Apotheek_Ede_Oost</IRI>
-        <Literal datatypeIRI="&xsd;string">Apotheek Ede Oost</Literal>
+        <IRI>#Apotheek_OnsDorp_Oost</IRI>
+        <Literal datatypeIRI="&xsd;string">Apotheek Ons Dorp Oost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1054,7 +1054,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_HuisstijlApotheek</IRI>
-        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ede Oost</Literal>
+        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ons Dorp Oost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
