@@ -12,6 +12,7 @@
 
 
 	<modules>
+		<module>HermiT-mvn</module> <!-- comment out for performance -->
 		<module>OWL2HTML</module>
 		<module>OWL2HTML-app</module>
 		<module>OWL2HTML-doc</module>
