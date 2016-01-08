@@ -1,7 +1,8 @@
-OWL2HTML 
+OWL2HTML [![Build Status](https://travis-ci.org/devette/experiments.svg?branch=master)](https://travis-ci.org/devette/experiments)
 =======
 
-A Project for experiments with reasoning and visualization of knowledge representated in the OWL2 language. (see http://www.w3.org/TR/owl2-syntax/)
+A Project for experiments with reasoning and visualization of knowledge representated in the OWL2 language. (see the [w3c specification](http://www.w3.org/TR/owl2-syntax/))
+
 The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning.
 OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents.
 OWL2 is a W3C Recommendation and is a
@@ -19,7 +20,7 @@ This project contains an app to generate offline html files with browsable and v
 - Maven plugin:
 This project contains a maven plugin to start offline (generated html) or online (web server) visualization of the owl2 files.
 
-=======
+======
 
 Tools necessary to build this project
 
@@ -31,20 +32,31 @@ Optional:
 - Bower - http://bower.io
 - IntelliJ - https://www.jetbrains.com/idea/download/
 
-=======
+A Good OWL2 editor:
+- Protégé - http://protege.stanford.edu
+- Neon Toolkit - [http://neon-toolkit.org/wiki/Main_Page.html](http://neon-toolkit.org/wiki/Main_Page.html)
+- Or choose another one from this [list of ontology editors](http://www.w3.org/wiki/Ontology_editors)
 
-Before building this project, it is necessary to build the Hermit Reasoner.
-This reasoner has yet not been updated to the OWL4 api. The source of this reasoner is a clone of
-https://github.com/phillord/hermit-reasoner, and is the Hermit reasoner, updated with OWL-api v4 changes.
+======
 
-1. Open a terminal window in the root of the project.
-2. cd HermiT-mvn
-3. mvn clean install
+GETTING STARTED:
 
-Next Build the OWL2HTML project, this depends on the previous step, and needs the build Hermit Snaphot: 1.3.8.5-SNAPSHOT.
+    1. Open a terminal window in the root of the project.
+    2. mvn clean install
+    3. cd OWL2HTML-web
+    4. mvn jetty:run
+    6. open the browser of your choice and go to url: http://localhost:8080/OWL2HTML-web/select?
 
-1. Open a terminal window in the root of the project.
-2. mvn clean install
-3. cd OWL2HTML-web
-4. mvn jetty:run
-6. open browser and go to url: http://localhost:8080/OWL2HTML-web/select?
+
+The build may be a little slow, because the Hermit build is slow. You can exclude the hermit build from your regular build
+after a first build, use the command below as a replacement for 'getting started step 2':
+
+    mvn clean install -Pfast
+
+======
+
+LEARN MORE:
+- [The hard way from the w3c specification](http://www.w3.org/TR/owl2-syntax/)
+- [Look at some video's from Open HPI's "Knowledge Engineering with Semantic Web Technologies 2015"](https://open.hpi.de/courses/semanticweb2015)
+- [Subscribe to the upcoming course from Open HPI "Linked Data Engineering"](https://open.hpi.de/courses/semanticweb2016)
+- [A really good tutorial about reasoning](http://dior.ics.muni.cz/%7Emakub/owl/#java)

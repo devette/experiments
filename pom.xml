@@ -10,18 +10,37 @@
 	<name>OWL 2 HTML Utilities</name>
 	<url>https://github.com/devette/experiments</url>
 
+	<profiles>
+		<!-- DO NOT CHANGE THE *ORDER* IN WHICH THESE PROFILES ARE DEFINED! -->
+		<profile>
+			<id>fast</id>
+			<modules>
+				<module>OWL2HTML</module>
+				<module>OWL2HTML-app</module>
+				<module>OWL2HTML-doc</module>
+				<module>OWL2HTML-plugin</module>
+				<module>OWL2HTML-web</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>full</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>HermiT-mvn</module> <!-- slow. use "mvn clean install -Pfast" to exclude it  -->
+				<module>OWL2HTML</module>
+				<module>OWL2HTML-app</module>
+				<module>OWL2HTML-doc</module>
+				<module>OWL2HTML-plugin</module>
+				<module>OWL2HTML-web</module>
+			</modules>
+		</profile>
+	</profiles>
 
-	<modules>
-		<module>HermiT-mvn</module> <!-- comment out for performance -->
-		<module>OWL2HTML</module>
-		<module>OWL2HTML-app</module>
-		<module>OWL2HTML-doc</module>
-		<module>OWL2HTML-plugin</module>
-		<module>OWL2HTML-web</module>
-	</modules>
 
 	<scm>
-		<url>https://github.com/kevinsawicki/devette/experiments</url>
+		<url>https://github.com/devette/experiments</url>
 		<connection>scm:git:git://github.com/devette/experiments.git</connection>
 		<developerConnection>scm:git:git@github.com:devette/experiments.git</developerConnection>
 	</scm>
