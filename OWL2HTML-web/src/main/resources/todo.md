@@ -16,7 +16,6 @@
 - better exception handling on reasoning errors.
 - better support for huge owl files.
 - better security.
-- reloading ontology (second time) gives error. (issue in OWL4-api)
 
 *** Testing  ***
 - create development ontology with all different elements.

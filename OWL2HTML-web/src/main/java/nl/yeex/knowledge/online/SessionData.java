@@ -23,6 +23,9 @@ import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SessionData {
     private static final Logger LOG = LoggerFactory.getLogger(SessionData.class);
 
@@ -38,6 +41,8 @@ public class SessionData {
     private OntologyVO loadedOntologyVO;
     private OntologyVO inferredOntologyVO;
     private OntologyVO ontologyVO;
+    private Map<String, OWLOntology> loadedOntologies;
+
     private boolean materialized;
 
     public SessionData() {
@@ -46,6 +51,7 @@ public class SessionData {
         // initial values.
         graphDepth = 3;
         theme = "eshopper";
+        loadedOntologies = new HashMap<String, OWLOntology>();
         manager = OWLManager.createOWLOntologyManager();
         manager.addMissingImportListener(new MissingImportListener() {
 
@@ -65,8 +71,14 @@ public class SessionData {
         context.setTheme(theme);
         try {
             factory = manager.getOWLDataFactory();
-            loadedOntology = manager
-                    .loadOntologyFromOntologyDocument(new FileDocumentSource(context.getOwlSourceFile()));
+            FileDocumentSource documentSource = new FileDocumentSource(context.getOwlSourceFile());
+            IRI iri = documentSource.getDocumentIRI();
+            if (loadedOntologies.get(iri.toString()) != null) {
+                loadedOntology = loadedOntologies.get(iri.toString());
+            } else {
+                loadedOntology = manager.loadOntologyFromOntologyDocument(documentSource);
+                loadedOntologies.put(iri.toString(), loadedOntology);
+            }
             loadedOntologyVO = new OntologyVO(loadedOntology);
             materialized = false;
             setUseInferredOntology(false);
@@ -103,8 +115,8 @@ public class SessionData {
     }
 
     /**
-     * @param name
-     * @return
+     * @param iriString an IRI identifying an owlClass
+     * @return the owlClass
      */
     public OWLClass getClassByIri(@Nonnull String iriString) {
         IRI iri = IRI.create(iriString);
@@ -117,8 +129,8 @@ public class SessionData {
     }
 
     /**
-     * @param name
-     * @return
+     * @param iriString an IRI identifying an owlObjectProperty
+     * @return the owlObjectProperty
      */
     public OWLObjectProperty getObjectPropertyByIri(@Nonnull String iriString) {
         IRI iri = IRI.create(iriString);
@@ -126,8 +138,8 @@ public class SessionData {
     }
 
     /**
-     * @param name
-     * @return
+     * @param iriString an IRI identifying an owlDataProperty
+     * @return the owlDataProperty
      */
     public OWLDataProperty getDataPropertyByIri(@Nonnull String iriString) {
         IRI iri = IRI.create(iriString);
