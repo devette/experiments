@@ -155,6 +155,7 @@
 										<li><a href="select?ontology=public/steel-30.owl">Steel case study</a></li>
 										<li><a href="select?ontology=public/goodrelations.v1.owl">GoodRelations</a></li>
 										<li><a href="select?ontology=public/musicontology-core.rdfs">Music</a></li>
+										<li><a href="select?ontology=public/wine.xml">Wine</a></li>
 										<li><a href="select?ontology=public/pproc_1.0.0.rdf">Procurement (multilingual)</a></li>
                                     </ul>
                                 </li> 

@@ -53,6 +53,8 @@ after a first build, use the command below as a replacement for 'getting started
 
     mvn clean install -Pfast
 
+![Screenshot](github-screenshot.png "A sample screenshot of the wine ontology")
+
 ======
 
 LEARN MORE:
