@@ -303,6 +303,10 @@
         <NamedIndividual IRI="#Mirjam"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Feit"/>
+        <NamedIndividual IRI="#Nieuwe_Huisstijl"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Client"/>
         <NamedIndividual IRI="#Peter_Tienusma"/>
     </ClassAssertion>
@@ -766,7 +770,12 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Afspraak_over_rollator</IRI>
-        <Literal datatypeIRI="&xsd;string">Vastleggen afspraak over rollator</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Vastleggen afspraak over rollator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Afspraak_over_rollator</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Write down agreement on use of walker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -775,13 +784,168 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Analyse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Analysis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse1</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Analyse 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Analysis 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse2</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Analyse 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Analysis 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse3</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Analyse 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Analyse3</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Analysis 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Apotheek</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Apotheek</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Apotheek</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Pharmacy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Apotheek_OnsDorp_Oost</IRI>
-        <Literal datatypeIRI="&xsd;string">Apotheek Ons Dorp Oost</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Apotheek Ons Dorp Oost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Apotheek_OnsDorp_Oost</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Pharmacy Our Village East</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Arts</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Arts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Arts</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Doctor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Barriere</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Barrier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Barriere</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Barriere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Betrokkene</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Betrokkene</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Betrokkene</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Concerned</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Calamiteit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Calamiteit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Calamiteit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Calamity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Client</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Client</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Client</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Client</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conclusie</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Conclusie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conclusie</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Conclusion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Derde</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Derde Partij</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Derde</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Third Party</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Feit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Fact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Feit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Feit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Kees</IRI>
         <Literal datatypeIRI="&xsd;string">Kees van Kooten</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Maatregel</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Maatregel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Maatregel</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Medewerker</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Employee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Medewerker</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Medewerker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -791,7 +955,52 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Nieuwe_Huisstijl</IRI>
-        <Literal datatypeIRI="&xsd;string">Nieuwe Huisstijl</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">New corporate identity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Nieuwe_Huisstijl</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Nieuwe Huisstijl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Oorzaak</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Cause</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Oorzaak</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Oorzaak</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organisatie</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Organisatie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organisatie</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Organization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Overlijden</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Death</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Overlijden</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Overlijden</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Persoon</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Persoon</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Persoon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -805,98 +1014,433 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Team</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Team</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Team</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Team</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ZiekenhuisOpname</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Hospitalization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ZiekenhuisOpname</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Ziekenhuis Opname</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ziekenhuis_ABC</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Hospital ABC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Ziekenhuis_ABC</IRI>
         <Literal datatypeIRI="&xsd;string">Ziekenhuis ABC</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#betrokkenInAnalyse</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Betrokken in analyse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#betrokkenInAnalyse</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Involved in analysis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#calamiteit1</IRI>
-        <Literal datatypeIRI="&xsd;string">Piet is gevallen in zijn slaapkamer K04</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Piet has fallen in his bedroom K04</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#calamiteit1</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Piet is gevallen in zijn slaapkamer K04</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#calamiteit1</IRI>
-        <Literal datatypeIRI="&xsd;string">Piet gevallen in slaapkamer</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Piet gevallen in slaapkamer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calamiteit1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Piet has fallen in his bedroom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#calamiteit2</IRI>
-        <Literal datatypeIRI="&xsd;string">Ziekenhuisopname na verkeerd medicijn</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Hospitalization after taking wrong medicin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calamiteit2</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Ziekenhuisopname na verkeerd medicijn</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#calimiteit2</IRI>
-        <Literal datatypeIRI="&xsd;string">Medewerker aangevallen door patient</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Employee attacked by patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calimiteit2</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Medewerker aangevallen door patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#conclusie1</IRI>
-        <Literal datatypeIRI="&xsd;string">De Organisatie moet het personeel beter gaan opleiden, zodat ze minder vaak dingen vergeten.</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">De Organisatie moet het personeel beter gaan opleiden, zodat ze minder vaak dingen vergeten.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#conclusie1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The organization should educate people better so they forget things less often</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#conclusieVanAnalyse</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Conclusie van analyse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#conclusieVanAnalyse</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Conclusion of analysis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#daardoor</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Daardoor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#daardoor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Thereby</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_HuisstijlApotheek</IRI>
-        <Literal datatypeIRI="&xsd;string">Nieuwe huisstijl apotheek Ons Dorp Oost</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">New corporate identity pharmacy &apos;Our Village East&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_HuisstijlApotheek</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Nieuwe huisstijl apotheek &apos;Ons Dorp Oost&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feit_geenAfspraakOverRollator</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">About the use of a walker no agreement is made in the care plan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feit_geenAfspraakOverRollator</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Over het gebruik van de rollator is in het zorgplan geen afspraak gemaakt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_geenAfspraakOverRollator</IRI>
-        <Literal datatypeIRI="&xsd;string">Geen afspraak over rollator</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Geen afspraak over rollator</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_geenAfspraakOverRollator</IRI>
-        <Literal datatypeIRI="&xsd;string">Over het gebruik van de rollator is in het zorgplan geen afspraak gemaakt</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">No agreement on walker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#feit_naarKamerGebracht</IRI>
-        <Literal datatypeIRI="&xsd;string">De avond voor de val werd de client aan de arm naar zijn slaapkamer begeleid</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">De avond voor de val werd de client aan de arm naar zijn slaapkamer begeleid</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feit_naarKamerGebracht</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The night before the fall, the client was brought to the bedroom without a walker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_naarKamerGebracht</IRI>
-        <Literal datatypeIRI="&xsd;string">Patient naar de slaapkamer gebracht</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Patient brought to bedroom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_naarKamerGebracht</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Patient naar de slaapkamer gebracht</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_rollatorInWoonkamer</IRI>
-        <Literal datatypeIRI="&xsd;string">Rollator in woonkamer</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Rollator in woonkamer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_rollatorInWoonkamer</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Walker in livingroom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#feit_rollatorNietGebruikt</IRI>
-        <Literal datatypeIRI="&xsd;string">De rollator werd niet gebruikt</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">De rollator werd niet gebruikt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_rollatorNietGebruikt</IRI>
-        <Literal datatypeIRI="&xsd;string">Rollator niet gebruikt</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Rollator niet gebruikt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_rollatorNietGebruikt</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Walker not used</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>#feit_rollatorNietGebruikt</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Walker was not used</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_vergetenOpTeSchrijven</IRI>
-        <Literal datatypeIRI="&xsd;string">Vergeten op te schrijven</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Forgotten to write down</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_vergetenOpTeSchrijven</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Vergeten op te schrijven</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_verkeerdeKleurMedicijndoosje</IRI>
-        <Literal datatypeIRI="&xsd;string">Verkeerde kleur medicijndoosje</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Verkeerde kleur medicijndoosje</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_verkeerdeKleurMedicijndoosje</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wrong color of medicine box</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_verkeerdeMedicatieIngenomen</IRI>
-        <Literal datatypeIRI="&xsd;string">Verkeerde medicatie ingenomen</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Verkeerde medicatie ingenomen</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feit_verkeerdeMedicatieIngenomen</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wrong medication taken</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#geboortedatum</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Date of birth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#geboortedatum</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Geboortedatum</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#geslacht</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Gender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#geslacht</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Geslacht</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isBetrokkenBijFeit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Is betrokken bij feit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isBetrokkenBijFeit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is involved with fact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isBetrokkene</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Is betrokken</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isBetrokkene</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is involved</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMaatregelTegenFeit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Is maatregel tegen feit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMaatregelTegenFeit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is measure against fact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isOorzaakVan</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is cause of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isOorzaakVan</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Is oorzaak van</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#naam</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Naam</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#naam</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oorzaakVanCalamiteit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Cause of calamity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oorzaakVanCalamiteit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Oorzaak van calamiteit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oorzaakVanFeit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Cause of fact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oorzaakVanFeit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Oorzaak van feit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#patient_was_boos</IRI>
-        <Literal datatypeIRI="&xsd;string">Patient was boos</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Patient was angry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#patient_was_boos</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Patient was boos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teNemenAnalyseMaatregel</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Analysis measure to take</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teNemenAnalyseMaatregel</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Te nemen analyse maatregel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teNemenMaatregel</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Measure to take</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teNemenMaatregel</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Te nemen maatregel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teOnderzoekenCalamiteit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Calamity to research</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#teOnderzoekenCalamiteit</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Te onderzoeken calamiteit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#vader_kwam_niet_opdagen_bij_afspraak</IRI>
-        <Literal datatypeIRI="&xsd;string">Vader kwam niet opdagen bij afspraak</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Father did not show up on appointment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vader_kwam_niet_opdagen_bij_afspraak</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Vader kwam niet opdagen bij afspraak</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#waarom</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Waarom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#waarom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Why</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#Point</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Plek</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#Point</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Lokatie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#lat</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Breedtegraad</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#lat</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Latitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#location</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#location</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Lokatie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#long</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Lengtegraad</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2003/01/geo/wgs84_pos#long</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Longitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2004/02/skos/core#Concept</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Concept</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2004/02/skos/core#Concept</IRI>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Concept</Literal>
     </AnnotationAssertion>
 </Ontology>
 
