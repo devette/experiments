@@ -6,6 +6,7 @@ import nl.yeex.knowledge.core.adapters.OntologyVO;
 import nl.yeex.knowledge.core.generation.GeneratorContext;
 import nl.yeex.knowledge.core.inference.Materializer;
 
+import nl.yeex.knowledge.online.render.*;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.FileDocumentSource;
 import org.semanticweb.owlapi.model.IRI;
@@ -23,11 +24,16 @@ import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SessionData {
-    private static final Logger LOG = LoggerFactory.getLogger(SessionData.class);
+public class Session {
+    public enum RenderType {ONTOLOGY, CLASS, INDIVIDUAL, OBJECTPROPERTY, DATAPROPERTY};
+    public enum ActiveOntology {LOADED, INFERRED};
+
+    private static final Logger LOG = LoggerFactory.getLogger(Session.class);
 
     private GeneratorContext context;
     private OWLOntologyManager manager;
@@ -36,6 +42,7 @@ public class SessionData {
     private OWLOntology loadedOntology;
     private OWLOntology inferredOntology;
     private String localBasePath;
+    private LastRendered lastRendered;
     private Integer graphDepth;
     private String theme;
     private OntologyVO loadedOntologyVO;
@@ -45,8 +52,10 @@ public class SessionData {
 
     private boolean materialized;
 
-    public SessionData() {
+    public Session(String documentRoot) {
         super();
+
+        setLocalBasePath(documentRoot);
 
         // initial values.
         graphDepth = 3;
@@ -62,6 +71,12 @@ public class SessionData {
                 LOG.error("Import failed: " + event.getImportedOntologyURI());
             }
         });
+
+        // TODO: get a document from the document root, or generate an index page and let a user select.
+        String defaultOntology = "calim.owl";
+        setCurrentOntology(documentRoot + "/owl/" + defaultOntology);
+        setLastRendered(RenderType.ONTOLOGY, defaultOntology);
+
     }
 
     public void setCurrentOntology(String ontologyFile) {
@@ -81,7 +96,7 @@ public class SessionData {
             }
             loadedOntologyVO = new OntologyVO(loadedOntology);
             materialized = false;
-            setUseInferredOntology(false);
+            setActiveOntology(ActiveOntology.LOADED);
         } catch (OWLOntologyCreationException e) {
             LOG.error("Ontology loading failed.", e);
         }
@@ -98,19 +113,26 @@ public class SessionData {
         }
     }
 
-    public void setUseInferredOntology(boolean enableInference) {
-        if (enableInference) {
-            if (!materialized) {
-                materializeOntology();
-            }
-            // work with inferred ontology.
-            ontology = inferredOntology;
-            ontologyVO = inferredOntologyVO;
-        } else {
-
-            // work with loaded ontology.
-            ontology = loadedOntology;
-            ontologyVO = loadedOntologyVO;
+    /**
+     * Toggle the ontology, from loaded to inferred or vice versa.
+     *
+     * @param activeOntology, LOADED of INFERRED
+     */
+    public void setActiveOntology(ActiveOntology activeOntology) {
+        switch (activeOntology)  {
+            case INFERRED:
+                if (!materialized) {
+                    materializeOntology();
+                }
+                // work with inferred ontology.
+                ontology = inferredOntology;
+                ontologyVO = inferredOntologyVO;
+                break;
+            case LOADED:
+                // work with loaded ontology.
+                ontology = loadedOntology;
+                ontologyVO = loadedOntologyVO;
+                break;
         }
     }
 
@@ -196,6 +218,96 @@ public class SessionData {
 
     public OntologyVO getOntologyVO() {
         return ontologyVO;
+    }
+
+    public void updateGraphDepthInSession(String graphDepthParameter) {
+        if (graphDepthParameter != null) {
+            Integer graphDepth = 3;
+            try {
+                graphDepth = Integer.valueOf(graphDepthParameter);
+            } catch (NumberFormatException ne) {
+                LOG.warn("not a number: " + graphDepthParameter);
+            }
+            setGraphDepth(graphDepth);
+        }
+    }
+
+    public void renderClass(@Nonnull String iri, @Nonnull OutputStream out)  throws IOException {
+        new RenderClass().generateClassResponse(this, iri, out);
+        setLastRendered(RenderType.CLASS, iri);
+    }
+
+    public void renderIndividual(@Nonnull String iri, @Nonnull OutputStream out)  throws IOException {
+        new RenderIndividual().generateIndividualResponse(this, iri, out);
+        setLastRendered(RenderType.INDIVIDUAL, iri);
+    }
+
+    public void renderObjectProperty(@Nonnull String iri, @Nonnull OutputStream out)  throws IOException {
+        new RenderObjectProperty().generateObjectPropertyResponse(this, iri, out);
+        setLastRendered(RenderType.OBJECTPROPERTY, iri);
+    }
+
+    public void renderDataProperty(@Nonnull String iri, @Nonnull OutputStream out)  throws IOException {
+        new RenderDataProperty().generateDataPropertyResponse(this, iri, out);
+        setLastRendered(RenderType.DATAPROPERTY, iri);
+    }
+
+    public void renderOntology(@Nonnull String name, @Nonnull OutputStream out)  throws IOException {
+        new RenderOntology().generateOntologyResponse(this, name, out);
+        setLastRendered(RenderType.ONTOLOGY, name);
+    }
+
+    public void toggleInferences(ActiveOntology activeOntology, @Nonnull OutputStream out)  throws IOException {
+        setActiveOntology(activeOntology);
+        renderLastObjectAgain(out);
+    }
+
+    public void renderLastObjectAgain(@Nonnull OutputStream out) throws IOException {
+        switch (lastRendered.getRenderType())  {
+            case CLASS:
+                new RenderClass().generateClassResponse(this, lastRendered.getName(), out);
+                break;
+            case INDIVIDUAL:
+                new RenderIndividual().generateIndividualResponse(this, lastRendered.getName(), out);
+                break;
+            case OBJECTPROPERTY:
+                new RenderObjectProperty().generateObjectPropertyResponse(this, lastRendered.getName(), out);
+                break;
+            case DATAPROPERTY:
+                new RenderDataProperty().generateDataPropertyResponse(this, lastRendered.getName(), out);
+                break;
+            default:
+                new RenderOntology().generateOntologyResponse(this, lastRendered.getName(), out);
+                break;
+        }
+    }
+
+    public void setLastRendered(@Nonnull RenderType renderType, @Nonnull String name)  {
+        this.lastRendered = new LastRendered(renderType, name);
+    }
+
+    public LastRendered getLastRendered()  {
+        return lastRendered;
+    }
+
+    public class LastRendered  {
+        final RenderType renderType;
+        final String name;
+
+        protected LastRendered(final RenderType renderType, final String name) {
+            this.renderType = renderType;
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+
+        public RenderType getRenderType() {
+            return renderType;
+        }
+
     }
 
 }
