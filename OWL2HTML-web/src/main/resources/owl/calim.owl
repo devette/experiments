@@ -1125,12 +1125,12 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_HuisstijlApotheek</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">New corporate identity pharmacy Our Village East</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">New corporate identity pharmacy &apos;Our Village East&apos;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#feit_HuisstijlApotheek</IRI>
-        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Nieuwe huisstijl apotheek Ons Dorp Oost</Literal>
+        <Literal xml:lang="nl" datatypeIRI="&rdf;PlainLiteral">Nieuwe huisstijl apotheek &apos;Ons Dorp Oost&apos;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

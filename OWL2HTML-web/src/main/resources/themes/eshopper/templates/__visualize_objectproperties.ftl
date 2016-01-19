@@ -41,13 +41,13 @@
       	
   		var container${graphid} = document.getElementById('${graphid}');
 		var data${graphid} = {
-			dot: 'strict digraph {'+
+			dot: "strict digraph {"+
 				<#list individual.getObjectPropertiesGraph(maxdepth?number)?values as objectproperty>
-					 '"${objectproperty.subject.getLocalLabel(context.locale)?json_string}" -> "${objectproperty.object.getLocalLabel(context.locale)?json_string}" [ label="${objectproperty.getLocalLabel(context.locale)?json_string}"];'+
-	  				 '"${objectproperty.subject.getLocalLabel(context.locale)?json_string}" [group="ObjectProperty"];'+
+					 "\"${objectproperty.subject.getLocalLabel(context.locale)?json_string}\" -> \"${objectproperty.object.getLocalLabel(context.locale)?json_string}\" [ label=\"${objectproperty.getLocalLabel(context.locale)?json_string}\"];"+
+	  				 "\"${objectproperty.subject.getLocalLabel(context.locale)?json_string}\" [group=\"ObjectProperty\"];"+
 				</#list>
-				 '"${individual.getLocalLabel(context.locale)?json_string}" [group="SelectedIndividual"];'+
-			'}'
+				 "\"${individual.getLocalLabel(context.locale)?json_string}\" [group=\"SelectedIndividual\"];"+
+			"}"
 		};
 		new vis.Network(container${graphid}, data${graphid}, options);
 		

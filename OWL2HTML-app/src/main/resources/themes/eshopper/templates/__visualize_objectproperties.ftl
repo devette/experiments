@@ -1,26 +1,4 @@
-<!-- this macro recursively generates the json data for a dataproperty chart -->
-<#macro graphObjectProperties objectproperty depth maxdepth>
-  <#if (depth?number < maxdepth?number) >
-	  '"${objectproperty.subject.getLocalLabel(context.locale)?json_string}" -> "${objectproperty.object.getLocalLabel(context.locale)?json_string}" [ label="${objectproperty.getLocalLabel(context.locale)?json_string}"];'+
-	  '"${objectproperty.subject.getLocalLabel(context.locale)?json_string}" [group="ObjectProperty"];'+
-	  <#list objectproperty.object.objectProperties as childProperty>
-	  		<@graphObjectProperties objectproperty=childProperty depth=depth+1 maxdepth=maxdepth/>
-	  </#list>
-  </#if>
-</#macro>
-
-<!-- this macro recursively generates the json data for a dataproperty chart -->
-<#macro graphReferencingAxioms referencingaxiom depth maxdepth>
-  <#if (depth?number < maxdepth?number) >
-	  '"${referencingaxiom.subject.getLocalLabel(context.locale)?json_string}" -> "${referencingaxiom.object.getLocalLabel(context.locale)?json_string}" [ label="${referencingaxiom.getLocalLabel(context.locale)?json_string}"];'+
- 	  '"${referencingaxiom.subject.getLocalLabel(context.locale)?json_string}" [group="ReferencingAxiom"];'+
-	  <#list referencingaxiom.subject.referencingAxioms as childProperty>
-	  		<@graphReferencingAxioms referencingaxiom=childProperty depth=depth+1 maxdepth=maxdepth/>
-	  </#list>
-  </#if>
-</#macro>
-
-<#macro graphjs graphid individual depth maxdepth>
+<#macro graphjs graphid individual maxdepth>
 <script language="JavaScript">
     function bodyLoad() {
         var options = {
@@ -55,9 +33,6 @@
             },
             ObjectProperty: {
                 color: {background:'white', border:'blue'}
-            },
-            ReferencingAxiom: {
-                color: {background:'white', border:'green'}
             }
         }
 		   
@@ -66,19 +41,16 @@
       	
   		var container${graphid} = document.getElementById('${graphid}');
 		var data${graphid} = {
-			dot: 'strict digraph {'+
-				<#list individual.objectProperties as objProp>
-					<@graphObjectProperties objectproperty=objProp depth=depth maxdepth=maxdepth/> 
+			dot: "strict digraph {"+
+				<#list individual.getObjectPropertiesGraph(maxdepth?number)?values as objectproperty>
+					 "\"${objectproperty.subject.getLocalLabel(context.locale)?json_string}\" -> \"${objectproperty.object.getLocalLabel(context.locale)?json_string}\" [ label=\"${objectproperty.getLocalLabel(context.locale)?json_string}\"];"+
+	  				 "\"${objectproperty.subject.getLocalLabel(context.locale)?json_string}\" [group=\"ObjectProperty\"];"+
 				</#list>
-				<#list individual.referencingAxioms as refAxiom>
-					<@graphReferencingAxioms referencingaxiom=refAxiom depth=depth maxdepth=maxdepth/> 
-				</#list>
-				 '"${individual.getLocalLabel(context.locale)?json_string}" [group="SelectedIndividual"];'+
-			'}'
+				 "\"${individual.getLocalLabel(context.locale)?json_string}\" [group=\"SelectedIndividual\"];"+
+			"}"
 		};
 		new vis.Network(container${graphid}, data${graphid}, options);
 		
-		        
     }
 </script>
 </#macro>

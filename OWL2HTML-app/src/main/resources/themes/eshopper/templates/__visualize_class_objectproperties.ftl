@@ -41,16 +41,16 @@
       	
   		var container${graphid} = document.getElementById('${graphid}');
 		var data${graphid} = {
-			dot: 'strict digraph {'+
+			dot: "strict digraph {"+
 				<#list clazz.objectProperties as objectProperty>
 					<#list objectProperty.domain as domainClassVO>
 					    <#list objectProperty.range as rangeClassVO>
-					    	'"${domainClassVO.getLocalLabel(context.locale)?json_string}" -> "${rangeClassVO.getLocalLabel(context.locale)?json_string}" [ label="${objectProperty.getLocalLabel(context.locale)?json_string}"];'+
+					    	"\"${domainClassVO.getLocalLabel(context.locale)?json_string}\" -> \"${rangeClassVO.getLocalLabel(context.locale)?json_string}\" [ label=\"${objectProperty.getLocalLabel(context.locale)?json_string}\"];"+
 					 	</#list>
 				    </#list>
 				</#list>
-				 '"${clazz.getLocalLabel(context.locale)?json_string}" [group="SelectedClass"];'+
-			'}'
+				 "\"${clazz.getLocalLabel(context.locale)?json_string}\" [group=\"SelectedClass\"];"+
+			"}"
 		};
 		new vis.Network(container${graphid}, data${graphid}, options);
 		

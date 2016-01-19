@@ -125,7 +125,7 @@
 		</div>
 	</#if>
 	
-	<@vis.graphjs graphid="individualGraph" individual=individual depth=0 maxdepth="3"/> 
+	<@vis.graphjs graphid="individualGraph" individual=individual maxdepth="3"/>
 	
 	
 </@c.page>
