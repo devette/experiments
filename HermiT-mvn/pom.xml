@@ -74,6 +74,7 @@
          <artifactId>maven-surefire-plugin</artifactId>
          <version>2.6</version>
          <configuration>
+           <skipTests>true</skipTests>
            <excludes>
              <!-- structural tests don't work and it's known -->
              <exclude>**/structural/*java</exclude>
