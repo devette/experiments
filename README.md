@@ -1,6 +1,8 @@
 OWL2HTML [![Build Status](https://travis-ci.org/devette/experiments.svg?branch=master)](https://travis-ci.org/devette/experiments)
 =======
 
+[![Join the chat at https://gitter.im/devette/experiments](https://badges.gitter.im/devette/experiments.svg)](https://gitter.im/devette/experiments?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Project for experiments with reasoning and visualization of knowledge representated in the OWL2 language. (see the [w3c specification](http://www.w3.org/TR/owl2-syntax/))
 
 The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning.
