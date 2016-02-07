@@ -15,9 +15,9 @@ No options, generates help:
 
 Simple example:
 
-    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/calim.owl" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/outputCalim/" -themesdirectory "src/main/resources/themes/" -theme "eshopper" -locale "en_US"
+    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/calim.owl" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/outputCalim/" -themesdirectory "src/main/resources/themes/" -theme "fancy" -locale "en_US"
 
 Multilingual:
 
-    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/pproc_1.0.0.rdf" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/pproc/" -themesdirectory "src/main/resources/themes/" -theme "eshopper" -locale "es"
-    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/pproc_1.0.0.rdf" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/pproc/" -themesdirectory "src/main/resources/themes/" -theme "eshopper" -locale "en"
+    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/pproc_1.0.0.rdf" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/pproc/" -themesdirectory "src/main/resources/themes/" -theme "fancy" -locale "es"
+    java -jar target/OWL2HTML-app-1.0-SNAPSHOT-jar-with-dependencies.jar -generation offline -sourcefile "src/main/resources/owl/pproc_1.0.0.rdf" -inputdirectory "src/main/resources/input/" -outputdirectory "target/testOutput/pproc/" -themesdirectory "src/main/resources/themes/" -theme "fancy" -locale "en"

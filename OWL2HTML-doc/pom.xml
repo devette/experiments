@@ -31,7 +31,7 @@
 					<themesDirectory>${project.basedir}/../OWL2HTML-app/src/main/resources/themes/</themesDirectory>
 
 					<!--  theme: must be an existing subdirectory in the themesdirectory -->
-					<theme>eshopper</theme>
+					<theme>fancy</theme>
 
 					<!--##  OUTPUT OPTIONS ##-->
 					<!--  outputDirectory: directory where generated html files will be written. (ensure write access!) -->

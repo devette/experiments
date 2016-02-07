@@ -59,7 +59,7 @@ public class Session {
 
         // initial values.
         graphDepth = 3;
-        theme = "eshopper";
+        theme = "fancy";
         loadedOntologies = new HashMap<String, OWLOntology>();
         manager = OWLManager.createOWLOntologyManager();
         manager.addMissingImportListener(new MissingImportListener() {

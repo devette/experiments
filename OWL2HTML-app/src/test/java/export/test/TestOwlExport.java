@@ -16,7 +16,7 @@ public class TestOwlExport {
         configuration.setOwlSourceFileName("src/main/resources/owl/pizza.owl");
         configuration.setOutputDirectory("target/testOutput/outputPizza/");
         configuration.setThemesDirectory("src/main/resources/themes/");
-        configuration.setTheme("eshopper");
+        configuration.setTheme("fancy");
 
         OWL2Exporter exporter = new OWL2Exporter();
         exporter.start(configuration);
@@ -30,7 +30,7 @@ public class TestOwlExport {
         configuration.setInputDirectory("src/main/resources/input/");
         configuration.setOutputDirectory("target/testOutput/outputCalim/");
         configuration.setThemesDirectory("src/main/resources/themes/");
-        configuration.setTheme("eshopper");
+        configuration.setTheme("fancy");
         configuration.setEnableInference(false);
 
         OWL2Exporter exporter = new OWL2Exporter();
@@ -45,7 +45,7 @@ public class TestOwlExport {
         configuration.setInputDirectory("src/main/resources/input/");
         configuration.setOutputDirectory("target/testOutput/outputCalimInferred/");
         configuration.setThemesDirectory("src/main/resources/themes/");
-        configuration.setTheme("eshopper");
+        configuration.setTheme("fancy");
         configuration.setEnableInference(true);
 
         OWL2Exporter exporter = new OWL2Exporter();

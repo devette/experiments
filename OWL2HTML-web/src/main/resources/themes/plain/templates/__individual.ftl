@@ -71,7 +71,7 @@
 			    <tr><th style="width:30%">subject type</th><th>subject</th><th>property</th><th>value</th></tr>
 		   <#list individual.referencingAxioms as p>
 				<tr>
-				    <td><#list p.subject.classes as clazz><a href="select?class=${clazz.iri?url}">${clazz.getLocalLabel(context.locale)}</a></#list></td>
+				    <td><#list p.subject.classes as clazz><a href="select?class=${clazz.iri?url}">${clazz.getLocalLabel(context.locale)}</a> </#list></td>
 				    <td><a href="select?individual=${p.subject.iri?url}">${p.subject.getLocalLabel(context.locale)}</a></td>
                     <td><a href="select?objectproperty=${p.iri?url}">${p.getLocalLabel(context.locale)}</a></td>
                     <td><a href="select?individual=${p.object.iri?url}">${p.object.getLocalLabel(context.locale)}</a></td>
