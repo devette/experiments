@@ -15,7 +15,7 @@ import java.util.Locale;
 
 @WebServlet("/select")
 public class FrontController extends HttpServlet {
-    enum ALLOWED_PARAMETERS {ONTOLOGY, CLASS, INDIVIDUAL, OBJECTPROPERTY, DATAPROPERTY, GRAPHDEPTH, INFERRED};
+    enum ALLOWED_PARAMETERS {ONTOLOGY, CLASS, INDIVIDUAL, OBJECTPROPERTY, DATAPROPERTY, GRAPHDEPTH, INFERRED, THEME};
 
     private static final Logger LOG = LoggerFactory.getLogger(FrontController.class);
 
@@ -47,8 +47,10 @@ public class FrontController extends HttpServlet {
         String dataPropertyParameter = request.getParameter(ALLOWED_PARAMETERS.DATAPROPERTY.toString().toLowerCase());
         String inferredParameter = request.getParameter(ALLOWED_PARAMETERS.INFERRED.toString().toLowerCase());
         String graphDepthParameter = request.getParameter(ALLOWED_PARAMETERS.GRAPHDEPTH.toString().toLowerCase());
+        String themeParameter = request.getParameter(ALLOWED_PARAMETERS.THEME.toString().toLowerCase());
 
         session.updateGraphDepthInSession(graphDepthParameter);
+        session.setTheme(themeParameter);
 
         if (classParameter!= null) {
             session.renderClass(classParameter, response.getOutputStream());

@@ -2,6 +2,7 @@ package nl.yeex.knowledge.core.generation;
 
 import java.io.File;
 import java.io.OutputStream;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Map;
 
@@ -67,7 +68,16 @@ public class GeneratorContext {
     }
 
     public void setTheme(String theme) {
-        this.theme = theme;
+        File[] themes = new File(themesDirectory).listFiles();
+        for (File existingTheme: themes) {
+            if (existingTheme.isDirectory() && existingTheme.getName().equalsIgnoreCase(theme)) {
+                // security: do not trust given parameter!
+                this.theme = existingTheme.getName();
+                // force refresh of template directory.
+                freemarkerHelper = null;
+                return;
+            }
+        }
     }
 
     public String getTheme() {

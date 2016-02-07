@@ -310,4 +310,10 @@ public class Session {
 
     }
 
+    public void setTheme(String theme) {
+        if (theme != null) {
+            this.theme = theme;
+            context.setTheme(theme);
+        }
+    }
 }
