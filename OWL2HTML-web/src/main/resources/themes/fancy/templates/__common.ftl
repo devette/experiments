@@ -51,6 +51,29 @@
 	   </li>
 </#macro>
 
+
+<#macro dropdown_menu>
+    <ul class="nav navbar-nav collapse navbar-collapse">
+         <#if (session.ontologyDirectory.directory)>
+            <#list session.ontologyDirectory.listFiles() as file>
+               <#if (file.directory)>
+                   <li class="dropdown"><a href="#">${file.name}<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                           <#list file.listFiles() as item>
+                               <li><a href="select?ontology=${session.ontologyDirectory.name + "/" + file.name + "/" + item.name}">${item.name}</a></li>
+                           </#list>
+                      </ul>
+                   </li>
+                <#else>
+                    <#if (!file.name?starts_with("."))>
+                        <li><a href="select?ontology=${session.ontologyDirectory.name + "/" + file.name}">${file.name}</a></li>
+                    </#if>
+                </#if>
+     	    </#list>
+         </#if>
+    </ul>
+</#macro>
+
 <#macro page title ontology>
 <#setting url_escaping_charset="UTF-8">
 
@@ -137,40 +160,7 @@
 							</button>
 						</div>
 						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="select?">${messages("__common.nav_home")}</a></li>
-								<li class="dropdown"><a href="#">${messages("__common.nav_my.ontologies")}<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-		                                <li><a href="select?ontology=calim.owl" class="active">Prisma</a></li>
-										<li><a href="select?ontology=cause_classification.skos.xml">Cause Classification (SKOS)</a></li>
-                                    </ul>
-                                </li> 	
-								<li class="dropdown"><a href="#">${messages("__common.nav_public.ontologies")}<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                   		<li><a href="select?ontology=public/pizza.owl">Pizza</a></li>
-										<li><a href="select?ontology=public/umbel.n3">Umbel</a></li>
-										<li><a href="select?ontology=public/foaf.rdf">Foaf (RDF)</a></li>
-										<li><a href="select?ontology=public/contact.en.nt">Contacts</a></li>
-										<li><a href="select?ontology=public/timeline.rdf">Timeline</a></li>
-										<li><a href="select?ontology=public/steel-30.owl">Steel case study</a></li>
-										<li><a href="select?ontology=public/goodrelations.v1.owl">GoodRelations</a></li>
-										<li><a href="select?ontology=public/musicontology-core.rdfs">Music</a></li>
-										<li><a href="select?ontology=public/wine.xml">Wine</a></li>
-										<li><a href="select?ontology=public/pproc_1.0.0.rdf">Procurement (multilingual)</a></li>
-                                    </ul>
-                                </li> 
-                                <li class="dropdown"><a href="#">${messages("__common.nav_reasoning.examples")}<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-		                                <li><a href="select?ontology=reasoner/class-restrictions.xml">Class Restrictions</a></li>
-										<li><a href="select?ontology=reasoner/imports.xml">Imports</a></li>
-										<li><a href="select?ontology=reasoner/some-values-from.xml">Some values from</a></li>
-										<li><a href="select?ontology=reasoner/some-values-from.xml">Symmetric</a></li>
-										<li><a href="select?ontology=reasoner/tutorial.owl">Tutorial</a></li>
-										<li><a href="select?ontology=reasoner/swrl_tutorial.owl">SWRL Tutorial</a></li>
-                                    </ul>
-                                </li> 
-								
-							</ul>
+				            <@dropdown_menu />
 						</div>
 						<div class="mainmenu pull-right">
 							<ul class="nav navbar-nav collapse navbar-collapse">

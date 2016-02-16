@@ -24,13 +24,14 @@ import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Session {
-    public enum RenderType {ONTOLOGY, CLASS, INDIVIDUAL, OBJECTPROPERTY, DATAPROPERTY};
+    public enum RenderType {ONTOLOGY, CLASS, INDIVIDUAL, OBJECTPROPERTY, DATAPROPERTY, INDEX};
     public enum ActiveOntology {LOADED, INFERRED};
 
     private static final Logger LOG = LoggerFactory.getLogger(Session.class);
@@ -75,7 +76,7 @@ public class Session {
         // TODO: get a document from the document root, or generate an index page and let a user select.
         String defaultOntology = "calim.owl";
         setCurrentOntology(documentRoot + "/owl/" + defaultOntology);
-        setLastRendered(RenderType.ONTOLOGY, defaultOntology);
+        setLastRendered(RenderType.INDEX, defaultOntology);
 
     }
 
@@ -170,6 +171,10 @@ public class Session {
 
     public String getLocalBasePath() {
         return localBasePath;
+    }
+
+    public File getOntologyDirectory() {
+        return new File(localBasePath +  "/owl/");
     }
 
     public void setLocalBasePath(String localBasePath) {
@@ -276,8 +281,11 @@ public class Session {
             case DATAPROPERTY:
                 new RenderDataProperty().generateDataPropertyResponse(this, lastRendered.getName(), out);
                 break;
-            default:
+            case ONTOLOGY:
                 new RenderOntology().generateOntologyResponse(this, lastRendered.getName(), out);
+                break;
+            default:
+                new RenderIndex().generateIndexResponse(this, out);
                 break;
         }
     }
