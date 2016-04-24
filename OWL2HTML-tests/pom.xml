@@ -4,6 +4,7 @@
 	<groupId>nl.yeex.knowledge</groupId>
 	<artifactId>OWL2HTML-tests</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>OWL 2 HTML Tests</name>
 
 	<properties>
 		<cucumber.version>1.2.2</cucumber.version>
