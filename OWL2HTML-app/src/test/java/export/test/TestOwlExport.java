@@ -23,6 +23,19 @@ public class TestOwlExport {
     }
 
     @Test
+    public void testOWLExportWine() {
+
+        GeneratorContext configuration = new GeneratorContext();
+        configuration.setOwlSourceFileName("src/main/resources/owl/wine.xml");
+        configuration.setOutputDirectory("target/testOutput/outputWine/");
+        configuration.setThemesDirectory("src/main/resources/themes/");
+        configuration.setTheme("fancy");
+
+        OWL2Exporter exporter = new OWL2Exporter();
+        exporter.start(configuration);
+    }
+
+    @Test
     public void testOWLExportCalimWithoutInference() {
 
         GeneratorContext configuration = new GeneratorContext();

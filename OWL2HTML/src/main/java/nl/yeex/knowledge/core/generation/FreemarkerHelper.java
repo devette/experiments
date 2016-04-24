@@ -136,7 +136,7 @@ public class FreemarkerHelper {
         } catch (ParseException e) {
             LOG.error("Error parsing freemarker template: ", e);
         } catch (IOException e) {
-            LOG.debug("Template not found: ", templateName, e);
+            LOG.debug("Template not found: ", templateName);
             exists = false;
         }
         return exists;

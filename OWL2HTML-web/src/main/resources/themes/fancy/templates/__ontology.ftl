@@ -49,7 +49,7 @@
 	<td style="vertical-align:top">
 	<ul style="list-style-type: none; list-style-position:inside; margin:0; padding:0;">
 	<#list ontology.classes as clazz>
-	      <li><i class="fa fa-bullseye"></i> <a href="select?class=${clazz.iri?url}">${clazz.getLocalLabel(context.locale)} (${clazz.individualsCount})</a></li>
+	      <li><i class="fa fa-bullseye"></i> <a href="select?class=${clazz.iri?url}" id="${clazz.label}">${clazz.getLocalLabel(context.locale)} (${clazz.individualsCount})</a></li>
 	</#list>
 	</ul>
 	</td>

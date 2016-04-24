@@ -1,18 +1,14 @@
 package nl.yeex.knowledge.core.adapters;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLEntity;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.model.parameters.Imports;
 import org.semanticweb.owlapi.search.EntitySearcher;
+import org.semanticweb.owlapi.util.OWLClassExpressionVisitorAdapter;
 import org.semanticweb.owlapi.util.SimpleRootClassChecker;
+
+import javax.annotation.Nonnull;
 
 /**
  * Wrapper class for OWLClass objects. This class hides all visitor patterns and
@@ -145,6 +141,7 @@ public class ClassVO extends AbstractOWLEntityVO implements Comparable<ClassVO> 
         return superClasses;
     }
 
+
     /**
      * Get all classes that are a direct subclass of this class.
      * 
@@ -182,8 +179,64 @@ public class ClassVO extends AbstractOWLEntityVO implements Comparable<ClassVO> 
         return label;
     }
 
+    public List getExpressions()  {
+        // GETTING the WhiteWine case right.
+        final List expressions = new ArrayList();
+
+        synchronized (ontology) {
+            for(OWLClassAxiom ax : ontology.getAxioms(owlClass, Imports.EXCLUDED)) {
+                for(OWLClassExpression owlClassExpression: ax.getNestedClassExpressions()) {
+                    owlClassExpression.accept(new OWLClassExpressionVisitorAdapter() {
+                        protected void handleDefault(OWLClassExpression owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+
+                        @Override
+                        public void visit(OWLObjectUnionOf owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+
+                        @Override
+                        public void visit(OWLObjectComplementOf owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+
+                        @Override
+                        public void visit(OWLObjectSomeValuesFrom owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+
+                        @Override
+                        public void visit(OWLObjectAllValuesFrom owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+
+                        public void visit(OWLObjectIntersectionOf owlClassExpression) {
+                            expressions.add(new ClassExpressionVO(ontology, owlClassExpression));
+                        }
+                    });
+                }
+            }
+        }
+
+
+        return expressions;
+    }
+
+    @Override
     public OWLEntity getOWLEntity() {
         return (OWLEntity) owlClass;
+    }
+
+
+    @Override
+    public boolean isIndividual() {
+        return false;
+    }
+
+    @Override
+    public boolean isClass() {
+        return true;
     }
 
     /*

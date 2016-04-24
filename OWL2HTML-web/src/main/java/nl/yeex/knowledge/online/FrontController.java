@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.Locale;
 
@@ -52,30 +53,32 @@ public class FrontController extends HttpServlet {
         session.updateGraphDepthInSession(graphDepthParameter);
         session.setTheme(themeParameter);
 
+        response.setContentType("text/html; charset=UTF-8");
+        OutputStream out = response.getOutputStream();
         if (classParameter!= null) {
-            session.renderClass(classParameter, response.getOutputStream());
+            session.renderClass(classParameter, out);
         } else if (individualParameter != null) {
-            session.renderIndividual(individualParameter, response.getOutputStream());
+            session.renderIndividual(individualParameter, out);
         } else if (objectPropertyParameter != null) {
-            session.renderObjectProperty(objectPropertyParameter, response.getOutputStream());
+            session.renderObjectProperty(objectPropertyParameter, out);
         } else if (dataPropertyParameter != null) {
-            session.renderDataProperty(dataPropertyParameter, response.getOutputStream());
+            session.renderDataProperty(dataPropertyParameter, out);
         } else if (ontologyParameter != null) {
-            session.renderOntology(ontologyParameter, response.getOutputStream());
+            session.renderOntology(ontologyParameter, out);
         } else if (inferredParameter != null) {
             Session.ActiveOntology activeOntology = ("true".equalsIgnoreCase(inferredParameter))? Session.ActiveOntology.INFERRED: Session.ActiveOntology.LOADED;
-            session.toggleInferences(activeOntology, response.getOutputStream());
+            session.toggleInferences(activeOntology, out);
         } else {
-            session.renderLastObjectAgain(response.getOutputStream());
+            session.renderLastObjectAgain(out);
         }
     }
 
     private void logRequestHeaders(HttpServletRequest request) {
-        LOG.info(String.format("Content Negotiation - Request Accept Header: %s", request.getHeader("accept")));
-        LOG.info(String.format("Preferred Requested Language: %s", request.getLocale()));
+        LOG.debug(String.format("Content Negotiation - Request Accept Header: %s", request.getHeader("accept")));
+        LOG.debug(String.format("Preferred Requested Language: %s", request.getLocale()));
         Enumeration<Locale> locales = request.getLocales();
         while (locales.hasMoreElements()) {
-            LOG.info(String.format("Alternative Language: %s", locales.nextElement()));
+            LOG.debug(String.format("Alternative Language: %s", locales.nextElement()));
         }
     }
 

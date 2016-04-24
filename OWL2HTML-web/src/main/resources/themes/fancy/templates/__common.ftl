@@ -55,7 +55,7 @@
 <#setting url_escaping_charset="UTF-8">
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="${session.context.locale.language}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
