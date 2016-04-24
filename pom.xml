@@ -10,6 +10,10 @@
 	<name>OWL 2 HTML Utilities</name>
 	<url>https://github.com/devette/experiments</url>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<profiles>
 		<!-- DO NOT CHANGE THE *ORDER* IN WHICH THESE PROFILES ARE DEFINED! -->
 		<profile>
@@ -20,6 +24,7 @@
 				<module>OWL2HTML-doc</module>
 				<module>OWL2HTML-plugin</module>
 				<module>OWL2HTML-web</module>
+				<module>OWL2HTML-tests</module>
 			</modules>
 		</profile>
 		<profile>
@@ -34,6 +39,7 @@
 				<module>OWL2HTML-doc</module>
 				<module>OWL2HTML-plugin</module>
 				<module>OWL2HTML-web</module>
+                <module>OWL2HTML-tests</module>
 			</modules>
 		</profile>
 	</profiles>
