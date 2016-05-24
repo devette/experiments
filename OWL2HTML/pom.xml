@@ -2,9 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>nl.yeex.knowledge</groupId>
+	<parent>
+		<groupId>nl.yeex.knowledge</groupId>
+		<artifactId>root-pom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
 	<artifactId>OWL2HTML</artifactId>
-	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>OWL 2 HTML Export Utility</name>
@@ -29,17 +32,18 @@
 			<artifactId>commons-cli</artifactId>
 			<version>${commons-cli.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>${freemarker.version}</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
@@ -48,7 +52,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.hermit-reasoner</groupId>
+			<groupId>nl.yeex.knowledge</groupId>
 			<artifactId>org.semanticweb.hermit</artifactId>
 			<version>${hermit.version}</version>
 		</dependency>
@@ -89,36 +93,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
 	</dependencies>
 
-
-	<build>
-		<plugins>
-
-	    	<plugin>
-	            <artifactId>maven-compiler-plugin</artifactId>
-	            <version>3.3</version>
-	            <configuration>
-	                <source>1.7</source>
-	                <target>1.7</target>
-	            </configuration>
-	        </plugin>
-
-	        <plugin>
-	            <groupId>external.atlassian.jgitflow</groupId>
-	            <artifactId>jgitflow-maven-plugin</artifactId>
-	            <version>1.0-m5.1</version>
-	            <configuration>
-	     			<allowSnapshots>true</allowSnapshots>
-	     			<noDeploy>true</noDeploy>
-	            </configuration>
-	        </plugin>
-
-		</plugins>
-	</build>
-
-	<scm>
-		<developerConnection>scm:git:file:///Users/herman/Documents/develop/gitrepo/LocalDevelopment/.git</developerConnection>
-	</scm>
 </project>
