@@ -34,6 +34,8 @@ public abstract class AbstractOWLEntityVO {
     }
 
     public abstract OWLEntity getOWLEntity();
+    public abstract boolean isClass();
+    public abstract boolean isIndividual();
 
     /**
      * Get the annotations that are associated with this Entity.

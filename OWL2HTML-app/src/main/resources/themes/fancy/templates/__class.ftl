@@ -11,6 +11,43 @@
 	</#list>
 </#if>
 
+<div class="post-meta">
+    <ul>
+        <#list clazz.expressions as expression>
+            <li style="display:block; clear:both; margin-bottom:2px;">
+                <#if expression.intersectionOf>
+                    ${messages("__classexpression.intersectionOf")}&nbsp;&nbsp;
+                </#if>
+                <#if expression.unionOf>
+                    ${messages("__classexpression.unionOf")}&nbsp;&nbsp;
+                </#if>
+                <#if expression.complementOf>
+                    ${messages("__classexpression.complementOf")}&nbsp;&nbsp;
+                </#if>
+                <#if expression.someValuesFrom>
+                    ${messages("__classexpression.someValuesFrom")}&nbsp;&nbsp;
+                </#if>
+                <#if expression.allValuesFrom>
+                    ${messages("__classexpression.allValuesFrom")}&nbsp;&nbsp;
+                </#if>
+                <#list expression.properties as p>
+                    <a href="${p.propertyLabel}.html"><i class="fa fa-long-arrow-right"></i> ${p.getLocalLabel(context.locale)}</a>&nbsp;&nbsp;
+                </#list>
+                <#if expression.hasFiller>
+                    <#list expression.filler as filler>
+                        <#if filler.class><a href="${filler.filename}.html"><i class="fa fa-bullseye"></i> ${filler.getLocalLabel(context.locale)}</a>&nbsp;&nbsp;</#if>
+                        <#if filler.individual><a href="${filler.filename}.html"><i class="fa fa-circle-o"></i> ${filler.getLocalLabel(context.locale)}</a>&nbsp;&nbsp;</#if>
+                    </#list>
+                </#if>
+                <#list expression.operands as operandClass>
+                     <a href="${operandClass.filename}.html"><i class="fa fa-bullseye"></i> ${operandClass.getLocalLabel(context.locale)}</a>&nbsp;&nbsp;
+                </#list>
+
+              </li>
+        </#list>
+    </ul>
+</div><br />
+
 <#if (clazz.subClasses?size > 0) >
 	<div class="post-meta">
 		<h4>${messages("__class.subclasses.seealso")}</h4>

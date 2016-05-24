@@ -16,9 +16,9 @@
 		    nodes: {
 			  color: {
 			    background: 'white',
-			    border: 'FE980F',
+			    border: '#FE980F',
 			    highlight: {
-			      background: 'FE980F',
+			      background: '#FE980F',
 			      border: 'black'
 			    }
 			  },
@@ -27,7 +27,7 @@
 		   },
 		   groups: {
 		    SelectedClass: {
-                color: {background:'FE980F', border:'black'},
+                color: {background:'#FE980F', border:'black'},
                 shape: 'box',
                 radius: 14
             },

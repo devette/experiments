@@ -47,6 +47,16 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
         return (OWLEntity) owlIndividual;
     }
 
+    @Override
+    public boolean isIndividual() {
+        return true;
+    }
+
+    @Override
+    public boolean isClass() {
+        return false;
+    }
+
     public Collection<ObjectPropertyVO> getReferencingAxioms() {
         final Collection<ObjectPropertyVO> referencingAxioms = new HashSet<ObjectPropertyVO>();
         Set<OWLAxiom> owlReferencingAxioms = this.ontology.getReferencingAxioms((OWLEntity) owlIndividual);
