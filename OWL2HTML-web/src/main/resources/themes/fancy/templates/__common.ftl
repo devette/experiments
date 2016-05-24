@@ -238,76 +238,34 @@
     <script src="themes/${context.theme}/static/js/main.js"></script>
 
     <script type="text/javascript">
-        $(function () {
 
-            var data = {
-                menu: [{
-                    name: '${messages("__common.nav_home")}',
-                    link: 'select?',
-                    sub: null
-                }, {
-                    name: '${messages("__common.nav_my.ontologies")}',
-                    link: '#',
-                    sub: [{
-                        name: 'Prisma',
-                        link: 'select?ontology=owl/calim.owl',
-                        sub: null
-                    }, {
-                        name: 'Cause Classification (SKOS)',
-                        link: 'select?ontology=owl/cause_classification.skos.xml',
-                        sub: null
-                    }]
-                }, {
-                    name: '${messages("__common.nav_public.ontologies")}',
-                    link: '#',
-                    sub: [{
-                        name: 'Pizza',
-                        link: 'select?ontology=owl/public/pizza.owl',
-                        sub: null
-                    }, {
-                        name: 'Wine',
-                        link: 'select?ontology=owl/public/wine.xml',
-                        sub: null
-                    }]
-                }, {
-                    name: '${messages("__common.nav_reasoning.examples")}',
-                    link: '#',
-                    sub: [{
-                        name: 'Tutorial',
-                        link: 'select?ontology=owl/reasoner/tutorial.owl',
-                        sub: null
-                    }, {
-                        name: 'Class Restrictions',
-                        link: 'select?ontology=owl/reasoner/class-restrictions.xml',
-                        sub: null
-                    }]
-                }]
-            };
-            var getMenuItem = function (itemData) {
-                var item = $("<li class=\"dropdown\">")
-                    .append(
-                $("<a>", {
-                    href: itemData.link,
-                    html: itemData.name
-                }));
-                if (itemData.sub) {
-                    var subList = $("<ul role=\"menu\" class=\"sub-menu\">");
-                    $.each(itemData.sub, function () {
-                        subList.append(getMenuItem(this));
-                    });
-                    item.append(subList);
-                }
-                return item;
-            };
+            $.getJSON("owl/menu.json", function(json) {
+                console.log(json); // this will show the info it in firebug console
+                var getMenuItem = function (itemData) {
+                    var item = $("<li class=\"dropdown\">")
+                        .append(
+                    $("<a>", {
+                        href: itemData.link,
+                        html: itemData.name
+                    }));
+                    if (itemData.sub) {
+                        var subList = $("<ul role=\"menu\" class=\"sub-menu\">");
+                        $.each(itemData.sub, function () {
+                            subList.append(getMenuItem(this));
+                        });
+                        item.append(subList);
+                    }
+                    return item;
+                };
 
-            var $menu = $("#menu");
-            $.each(data.menu, function () {
-                $menu.append(
-                    getMenuItem(this)
-                );
+                var $menu = $("#menu");
+                $.each(json.menu, function () {
+                    $menu.append(
+                        getMenuItem(this)
+                    );
+                });
+                $menu.menu();
             });
-            $menu.menu();
-        });
         </script>
 </body>
 </html>

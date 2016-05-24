@@ -1,0 +1,47 @@
+{
+  "menu": [{
+    "name": "Start",
+    "link": "select?",
+    "sub": null
+  }, {
+    "name": "Mijn Ontologie&euml;n",
+    "link": "#",
+    "sub": [{
+      "name": "Prisma",
+      "link": "select?ontology=owl/calim.owl",
+      "sub": null
+    }, {
+      "name": "Cause Classification (SKOS)",
+      "link": "select?ontology=owl/cause_classification.skos.xml",
+      "sub": null
+    }]
+  }, {
+    "name": "Publieke Ontologie&euml;n",
+    "link": "#",
+    "sub": [{
+      "name": "Pizza",
+      "link": "select?ontology=owl/public/pizza.owl",
+      "sub": null
+    },{
+      "name": "Foaf",
+      "link": "select?ontology=owl/public/foaf.rdf",
+      "sub": null
+    }, {
+      "name": "Wine",
+      "link": "select?ontology=owl/public/wine.xml",
+      "sub": null
+    }]
+  }, {
+    "name": "Redeneer Voorbeelden",
+    "link": "#",
+    "sub": [{
+      "name": "Tutorial",
+      "link": "select?ontology=owl/reasoner/tutorial.owl",
+      "sub": null
+    }, {
+      "name": "Class Restrictions",
+      "link": "select?ontology=owl/reasoner/class-restrictions.xml",
+      "sub": null
+    }]
+  }]
+}
