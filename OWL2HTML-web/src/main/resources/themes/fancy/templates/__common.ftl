@@ -53,25 +53,7 @@
 
 
 <#macro dropdown_menu>
-    <ul class="nav navbar-nav collapse navbar-collapse">
-         <#if (session.ontologyDirectory.directory)>
-            <#list session.ontologyDirectory.listFiles() as file>
-               <#if (file.directory)>
-                   <li class="dropdown"><a href="#">${file.name}<i class="fa fa-angle-down"></i></a>
-                      <ul role="menu" class="sub-menu">
-                           <#list file.listFiles() as item>
-                               <li><a href="select?ontology=${session.ontologyDirectory.name + "/" + file.name + "/" + item.name}">${item.name}</a></li>
-                           </#list>
-                      </ul>
-                   </li>
-                <#else>
-                    <#if (!file.name?starts_with("."))>
-                        <li><a href="select?ontology=${session.ontologyDirectory.name + "/" + file.name}">${file.name}</a></li>
-                    </#if>
-                </#if>
-     	    </#list>
-         </#if>
-    </ul>
+    <ul id="menu" class="nav navbar-nav collapse navbar-collapse"></ul>
 </#macro>
 
 <#macro page title ontology>
@@ -254,6 +236,79 @@
     <script src="themes/${context.theme}/static/bower_components/prettyphoto/js/jquery.prettyPhoto.js"></script>
     <script src="themes/${context.theme}/static/bower_components/vis/dist/vis.js"></script>
     <script src="themes/${context.theme}/static/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var data = {
+                menu: [{
+                    name: '${messages("__common.nav_home")}',
+                    link: 'select?',
+                    sub: null
+                }, {
+                    name: '${messages("__common.nav_my.ontologies")}',
+                    link: '#',
+                    sub: [{
+                        name: 'Prisma',
+                        link: 'select?ontology=owl/calim.owl',
+                        sub: null
+                    }, {
+                        name: 'Cause Classification (SKOS)',
+                        link: 'select?ontology=owl/cause_classification.skos.xml',
+                        sub: null
+                    }]
+                }, {
+                    name: '${messages("__common.nav_public.ontologies")}',
+                    link: '#',
+                    sub: [{
+                        name: 'Pizza',
+                        link: 'select?ontology=owl/public/pizza.owl',
+                        sub: null
+                    }, {
+                        name: 'Wine',
+                        link: 'select?ontology=owl/public/wine.xml',
+                        sub: null
+                    }]
+                }, {
+                    name: '${messages("__common.nav_reasoning.examples")}',
+                    link: '#',
+                    sub: [{
+                        name: 'Tutorial',
+                        link: 'select?ontology=owl/reasoner/tutorial.owl',
+                        sub: null
+                    }, {
+                        name: 'Class Restrictions',
+                        link: 'select?ontology=owl/reasoner/class-restrictions.xml',
+                        sub: null
+                    }]
+                }]
+            };
+            var getMenuItem = function (itemData) {
+                var item = $("<li class=\"dropdown\">")
+                    .append(
+                $("<a>", {
+                    href: itemData.link,
+                    html: itemData.name
+                }));
+                if (itemData.sub) {
+                    var subList = $("<ul role=\"menu\" class=\"sub-menu\">");
+                    $.each(itemData.sub, function () {
+                        subList.append(getMenuItem(this));
+                    });
+                    item.append(subList);
+                }
+                return item;
+            };
+
+            var $menu = $("#menu");
+            $.each(data.menu, function () {
+                $menu.append(
+                    getMenuItem(this)
+                );
+            });
+            $menu.menu();
+        });
+        </script>
 </body>
 </html>
 </#macro>
