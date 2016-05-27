@@ -55,7 +55,7 @@ public class FrontController extends HttpServlet {
 
         response.setContentType("text/html; charset=UTF-8");
         OutputStream out = response.getOutputStream();
-        if (classParameter!= null) {
+        if (classParameter != null) {
             session.renderClass(classParameter, out);
         } else if (individualParameter != null) {
             session.renderIndividual(individualParameter, out);

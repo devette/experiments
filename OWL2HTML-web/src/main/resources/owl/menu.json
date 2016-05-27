@@ -1,45 +1,56 @@
 {
   "menu": [{
-    "name": "Start",
+    "name_nl": "Start",
+    "name_en": "Start",
     "link": "select?",
     "sub": null
   }, {
-    "name": "Mijn Ontologie&euml;n",
+    "name_nl": "Mijn Ontologie&euml;n",
+    "name_en": "My Ontologies",
     "link": "#",
     "sub": [{
-      "name": "Prisma",
+      "name_nl": "Prisma",
+      "name_en": "Prisma",
       "link": "select?ontology=owl/calim.owl",
       "sub": null
     }, {
-      "name": "Cause Classification (SKOS)",
+      "name_nl": "Cause Classification (SKOS)",
+      "name_en": "Cause Classification (SKOS)",
       "link": "select?ontology=owl/cause_classification.skos.xml",
       "sub": null
     }]
   }, {
-    "name": "Publieke Ontologie&euml;n",
+    "name_nl": "Publieke Ontologie&euml;n",
+    "name_en": "Public Ontologies",
     "link": "#",
     "sub": [{
-      "name": "Pizza",
+      "name_nl": "Pizza",
+      "name_en": "Pizza",
       "link": "select?ontology=owl/public/pizza.owl",
       "sub": null
     },{
-      "name": "Foaf",
+      "name_nl": "Foaf",
+      "name_en": "Foaf",
       "link": "select?ontology=owl/public/foaf.rdf",
       "sub": null
     }, {
-      "name": "Wine",
+      "name_nl": "Wijn",
+      "name_en": "Wine",
       "link": "select?ontology=owl/public/wine.xml",
       "sub": null
     }]
   }, {
-    "name": "Redeneer Voorbeelden",
+    "name_nl": "Redeneer Voorbeelden",
+    "name_en": "Reasoning Examples",
     "link": "#",
     "sub": [{
-      "name": "Tutorial",
+      "name_nl": "Leer voorbeeld",
+      "name_en": "Tutorial",
       "link": "select?ontology=owl/reasoner/tutorial.owl",
       "sub": null
     }, {
-      "name": "Class Restrictions",
+      "name_nl": "Class Beperkingen",
+      "name_en": "Class Restrictions",
       "link": "select?ontology=owl/reasoner/class-restrictions.xml",
       "sub": null
     }]

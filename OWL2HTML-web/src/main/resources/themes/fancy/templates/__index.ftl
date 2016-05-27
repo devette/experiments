@@ -1,19 +1,5 @@
-<#macro selectOntologyFiles file path>
-  	  <li>
-		  <#if (file.directory)>
-			  <#list file.listFiles() as subDirectory>
-			  		<ul>
-						<@selectOntologyFiles file=subDirectory path=path +"/" +file.name />
-					</ul>
-			  </#list>
-		  <#else>
-		     <a href="select?ontology=${path + "/" + file.name}">${file.name}</a>
-		  </#if>
-	   </li>
-</#macro>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="${session.context.locale.language}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,25 +21,29 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/${context.theme}/static/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/${context.theme}/static/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/${context.theme}/static/images/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    <!-- little style tuning -->
-    .category-products .badge {
-    	font-size:12px;
-    }
-   	.category-products .panel-default .panel-heading .panel-title a {
-		  font-size: 12px;
-	}
-	.panel-group {
-	    margin-bottom: 7px
-	}
-	.panel-heading {
-		padding: 7px 10px;
-	}
-    </style>
+
 </head><!--/head-->
 
 <body>
-     <@selectOntologyFiles file=session.ontologyDirectory path=""/>
+	<#include "header.ftl">
+
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                         <ul id="indexmenu" class="nav nav-pills nav-stacked"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<#include "footer.ftl">
+
+    <script src="themes/${context.theme}/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="themes/${context.theme}/static/js/main.js"></script>
+    <script src="themes/${context.theme}/static/js/indexmenu.js"></script>
 </body>
 
 </html>
