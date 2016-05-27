@@ -41,12 +41,12 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<span class="pull-right" id="graphControl">		
-					<a href="select?graphdepth=1&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 1</span></a>
-					<a href="select?graphdepth=2&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 2</span></a>
-					<a href="select?graphdepth=3&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 3</span></a>
-					<a href="select?graphdepth=4&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 4</span></a>
-					<a href="select?graphdepth=5&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 5</span></a>
-					<a href="select?graphdepth=6&&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 6</span></a>
+					<a href="select?graphdepth=1&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 1</span></a>
+					<a href="select?graphdepth=2&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 2</span></a>
+					<a href="select?graphdepth=3&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 3</span></a>
+					<a href="select?graphdepth=4&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 4</span></a>
+					<a href="select?graphdepth=5&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 5</span></a>
+					<a href="select?graphdepth=6&individual=${individual.iri?url}#graphControl"><span class="badge"><i class="fa fa-cog"></i> 6</span></a>
 				    <a data-toggle="collapse" data-parent="#graphPanel" href="#graphPanel"><span class="badge"><i class="fa fa-plus"></i></span></a>
 			    </span>
 				<h4 class="panel-title">

@@ -21,8 +21,8 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://localhost:8080/OWL2HTML-web/owl/cause_classification.skos.xml</Import>
-    <Import>http://localhost:8080/OWL2HTML-web/owl/wgs84_pos.owl</Import>
+    <Import>http://localhost:8080/OWL2HTML-web/owl/develop/cause_classification.skos.xml</Import>
+    <Import>http://localhost:8080/OWL2HTML-web/owl/develop/wgs84_pos.owl</Import>
     <Declaration>
         <Class IRI="#Analyse"/>
     </Declaration>

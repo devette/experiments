@@ -75,7 +75,7 @@ public class Session {
 
         // TODO: get a document from the document root, or generate an index page and let a user select.
         String defaultOntology = "calim.owl";
-        setCurrentOntology(documentRoot + "/owl/" + defaultOntology);
+        setCurrentOntology(documentRoot + "/owl/develop/" + defaultOntology);
         setLastRendered(RenderType.INDEX, defaultOntology);
 
     }
@@ -182,6 +182,9 @@ public class Session {
     }
 
     public GeneratorContext getContext() {
+        if (context == null) {
+            context = new GeneratorContext();
+        }
         return context;
     }
 

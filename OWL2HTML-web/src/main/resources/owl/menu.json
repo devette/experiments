@@ -11,12 +11,12 @@
     "sub": [{
       "name_nl": "Prisma",
       "name_en": "Prisma",
-      "link": "select?ontology=owl/calim.owl",
+      "link": "select?ontology=owl/develop/calim.owl",
       "sub": null
     }, {
       "name_nl": "Cause Classification (SKOS)",
       "name_en": "Cause Classification (SKOS)",
-      "link": "select?ontology=owl/cause_classification.skos.xml",
+      "link": "select?ontology=owl/develop/cause_classification.skos.xml",
       "sub": null
     }]
   }, {
@@ -33,7 +33,32 @@
       "name_en": "Foaf",
       "link": "select?ontology=owl/public/foaf.rdf",
       "sub": null
+    },{
+      "name_nl": "Contacts",
+      "name_en": "Contacts",
+      "link": "select?ontology=owl/public/contact.en.nt",
+      "sub": null
     }, {
+      "name_nl": "Goodrelations",
+      "name_en": "Goodrelations",
+      "link": "select?ontology=owl/public/goodrelations.v1.owl",
+      "sub": null
+    },{
+      "name_nl": "Inkoop",
+      "name_en": "Procurement",
+      "link": "select?ontology=owl/public/pproc_1.0.0.rdf",
+      "sub": null
+    },{
+      "name_nl": "Staal",
+      "name_en": "Steel",
+      "link": "select?ontology=owl/public/steel-30.owl",
+      "sub": null
+    },{
+      "name_nl": "Tijdlijn",
+      "name_en": "Timeline",
+      "link": "select?ontology=owl/public/timeline.rdf",
+      "sub": null
+    },{
       "name_nl": "Wijn",
       "name_en": "Wine",
       "link": "select?ontology=owl/public/wine.xml",
