@@ -15,8 +15,8 @@
    		 <commons-cli.version>1.2</commons-cli.version>
    		 <commons-io.version>2.4</commons-io.version>
    		 <freemarker.version>2.3.19</freemarker.version>
-   		 <owlapi.version>4.1.0</owlapi.version>
-   		 <hermit.version>1.3.8.5-SNAPSHOT</hermit.version>
+   		 <owlapi.version>4.2.4</owlapi.version>
+   		 <hermit.version>1.3.8.413</hermit.version>
    		 <junit.version>4.8.2</junit.version>
    		 <suntools.version>1.5.0</suntools.version>
    		 <graphstream.version>1.2</graphstream.version>
@@ -72,7 +72,7 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>com.hermit-reasoner</groupId>
+			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>org.semanticweb.hermit</artifactId>
 			<version>${hermit.version}</version>
 		</dependency>

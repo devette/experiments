@@ -50,11 +50,6 @@ GETTING STARTED:
     6. open the browser of your choice and go to url: http://localhost:8080/OWL2HTML-web/select?
 
 
-The build may be a little slow, because the Hermit build is slow. You can exclude the hermit build from your regular build
-after a first build, use the command below as a replacement for 'getting started step 2':
-
-    mvn clean install -Pfast
-
 ![Screenshot](github-screenshot.png "A sample screenshot of the wine ontology")
 
 ======
