@@ -8,6 +8,7 @@ import java.util.Set;
 import nl.yeex.knowledge.offline.generators.Generator;
 import nl.yeex.knowledge.offline.generators.GeneratorContext;
 
+import org.semanticweb.HermiT.Configuration;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.FileDocumentSource;
@@ -126,7 +127,7 @@ public class OWL2Exporter {
     private OWLOntology materializeInferences(OWLOntologyManager manager, OWLOntology ontology, GeneratorContext context)
             throws OWLOntologyCreationException {
         LOG.info("Starting Reasoner...\n");
-        Reasoner hermit = new Reasoner(ontology);
+        Reasoner hermit = new Reasoner(new Configuration(), ontology);
         LOG.info("Reasoner is consistent: " + hermit.isConsistent() + "\n");
 
         // hermit.precomputeInferences(InferenceType.SAME_INDIVIDUAL);
