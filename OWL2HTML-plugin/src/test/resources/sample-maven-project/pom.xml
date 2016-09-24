@@ -8,6 +8,7 @@
   
   	<properties>
    		 <owl2html.version>1.0-SNAPSHOT</owl2html.version>
+		<resources.directory>${project.basedir}/../../../../OWL2HTML-app/src/main/resources</resources.directory>
 	</properties>
 	
 	<build>
@@ -21,14 +22,14 @@
 
 				<configuration>
 					<!--##  INPUT OPTIONS ##-->
-					<owlSourceFile>${project.basedir}/../OWL2HTML-app/src/main/resources/owl/calim.owl</owlSourceFile>
+					<owlSourceFile>${resources.directory}/owl/calim.owl</owlSourceFile>
 
 					<!--  inputDirectory: directory with owl files for generation. (ensure read access!) -->
-					<inputDirectory>${project.basedir}/../OWL2HTML-app/src/main/resources/owl</inputDirectory>
+					<inputDirectory>${resources.directory}/owl</inputDirectory>
 
 					<!--##  GENERATION TEMPLATES ##-->
 					<!--  themesDirectory: directory with the freemarker templates used for generation -->
-					<themesDirectory>${project.basedir}/../OWL2HTML-app/src/main/resources/themes/</themesDirectory>
+					<themesDirectory>${resources.directory}/themes/</themesDirectory>
 
 					<!--  theme: must be an existing subdirectory in the themesdirectory -->
 					<theme>fancy</theme>
