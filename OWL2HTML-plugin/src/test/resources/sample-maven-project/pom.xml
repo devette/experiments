@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>nl.yeex.knowledge</groupId>
+		<artifactId>root-pom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+  <artifactId>OWL2HTML-doc</artifactId>
+  <name>OWL 2 HTML Documentation</name>
+  <description>OWL 2 HTML documentation generation</description>
+  
+  	<properties>
+   		 <owl2html.plugin.version>${project.parent.version}</owl2html.plugin.version>
+		<resources.directory>${project.basedir}/../../../../OWL2HTML-app/src/main/resources</resources.directory>
+	</properties>
+	
+	<build>
+		<plugins>
+
+			<!-- running the plugin -->
+			<plugin>
+				<groupId>nl.yeex.knowledge</groupId>
+				<artifactId>OWL2HTML-plugin</artifactId>
+				<version>${owl2html.plugin.version}</version>
+
+				<configuration>
+					<!--##  INPUT OPTIONS ##-->
+					<owlSourceFile>${resources.directory}/owl/calim.owl</owlSourceFile>
+
+					<!--  inputDirectory: directory with owl files for generation. (ensure read access!) -->
+					<inputDirectory>${resources.directory}/owl</inputDirectory>
+
+					<!--##  GENERATION TEMPLATES ##-->
+					<!--  themesDirectory: directory with the freemarker templates used for generation -->
+					<themesDirectory>${resources.directory}/themes/</themesDirectory>
+
+					<!--  theme: must be an existing subdirectory in the themesdirectory -->
+					<theme>fancy</theme>
+
+					<!--##  OUTPUT OPTIONS ##-->
+					<!--  outputDirectory: directory where generated html files will be written. (ensure write access!) -->
+					<outputDirectory>target/outputPlugin/</outputDirectory>
+
+					<!--  inferenceenabled: possible values (true|false) -->
+					<inferenceenabled>false</inferenceenabled>
+
+					<!--  generation: possible values (online|offline) -->
+					<generation>offline</generation>
+
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>process-resources</phase>
+
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+	     
+		</plugins>
+	</build>
+</project>
