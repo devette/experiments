@@ -14,30 +14,113 @@
 		<github.global.server>github</github.global.server>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<skip-javadoc>false</skip-javadoc>
 
 		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
 		<maven-compiler-plugin.source>1.7</maven-compiler-plugin.source>
 		<maven-compiler-plugin.target>1.7</maven-compiler-plugin.target>
 
-		<jgitflow-maven-plugin.version>1.0-m5.1</jgitflow-maven-plugin.version>
 		<maven-deploy-plugin.version>2.8.1</maven-deploy-plugin.version>
 
 		<internal.repo.url>file://${project.build.directory}/mvn-repo</internal.repo.url>
 	</properties>
 
+	<modules>
+		<module>OWL2HTML</module>
+		<module>OWL2HTML-app</module>
+		<module>OWL2HTML-plugin</module>
+		<module>OWL2HTML-web</module>
+		<module>OWL2HTML-tests</module>
+	</modules>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/devette/experiments/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis</system>
+		<url>http://travis-ci.org/devette/experiments</url>
+	</ciManagement>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Herman de Vette</name>
+			<email>herman@de-vette.nl</email>
+			<organization>Yeex</organization>
+			<organizationUrl>http://www.yeex.nl</organizationUrl>
+		</developer>
+	</developers>
+
 	<profiles>
 		<profile>
-			<id>full</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<modules>
-				<module>OWL2HTML</module>
-				<module>OWL2HTML-app</module>
-				<module>OWL2HTML-plugin</module>
-				<module>OWL2HTML-web</module>
-                <module>OWL2HTML-tests</module>
-			</modules>
+			<id>release</id>
+			<build>
+				<plugins>
+
+					<!-- We need to configure the Source Plugin for deploying the sources. -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- We need to configure the Javadoc Plugin for deploying the Javadocs -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.8.1</version>
+						<configuration>
+							<show>public</show>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<failOnError>false</failOnError>
+									<skip>${skip-javadoc}</skip>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- We need the GPG Plugin to self-sign the jar files. A valid signature
+						for the jar files is a requirement for deploying to Maven Central.
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					-->
+				</plugins>
+			</build>
 		</profile>
 	</profiles>
 
@@ -60,57 +143,30 @@
 				<configuration>
 					<source>${maven-compiler-plugin.source}</source>
 					<target>${maven-compiler-plugin.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>external.atlassian.jgitflow</groupId>
-				<artifactId>jgitflow-maven-plugin</artifactId>
-				<version>${jgitflow-maven-plugin.version}</version>
-				<configuration>
-					<allowSnapshots>true</allowSnapshots>
-					<noDeploy>true</noDeploy>
-					<flowInitContext>
-						<releaseBranchPrefix>release-core-</releaseBranchPrefix>
-					</flowInitContext>
-				</configuration>
-			</plugin>
-
-			<!--
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.12</version>
-				<configuration>
-					<message>Maven artifacts for ${project.version}</message>
-					<noJekyll>true</noJekyll>
-					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-					<branch>refs/heads/mvn-repo</branch>
-					<includes><include>**/*</include></includes>
-					<merge>true</merge>
-					<dryRun>false</dryRun>
-					<repositoryName>experiments</repositoryName>
-					<repositoryOwner>devette</repositoryOwner>    	<
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>deploy</phase>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 		</plugins>
 	</build>
 
 	<distributionManagement>
+		<downloadUrl>https://oss.sonatype.org/content/groups/public</downloadUrl>
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
 			<url>${internal.repo.url}</url>
 		</repository>
+		<!--
+		<repository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		-->
 	</distributionManagement>
 
 	<scm>
