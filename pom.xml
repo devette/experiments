@@ -103,7 +103,7 @@
 					</plugin>
 
 					<!-- We need the GPG Plugin to self-sign the jar files. A valid signature
-						for the jar files is a requirement for deploying to Maven Central.
+						for the jar files is a requirement for deploying to Maven Central. -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
@@ -117,6 +117,20 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+
+					<!--
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.4</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>sonatype-nexus-staging</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<stagingProfileId>XXXXXXX?</stagingProfileId>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
 					</plugin>
 					-->
 				</plugins>
