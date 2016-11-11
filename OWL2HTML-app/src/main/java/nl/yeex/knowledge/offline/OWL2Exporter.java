@@ -56,6 +56,18 @@ public class OWL2Exporter {
      */
     public void start(GeneratorContext context) {
         LOG.info("----------- Start Export -----------\n");
+        try {
+            OWLOntology ontology = loadOntology(context);
+            for (Generator generator : context.getGenerators()) {
+                generator.generate(context, ontology);
+            }
+        } catch (OWLOntologyCreationException e) {
+            LOG.error("Loading ontology failed.", e);
+        }
+        LOG.info("\n----------- Finished Export -----------\n");
+    }
+
+    public static OWLOntology loadOntology(GeneratorContext context) throws OWLOntologyCreationException  {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 
         // TODO: the alternative does not work?
@@ -71,27 +83,19 @@ public class OWL2Exporter {
         // manager.addIRIMapper(new LookupFromSameDirectoryIRIMapper(context));
 
         OWLOntology ontology;
-        try {
 
-            // Load the ontology/ontologies
-            // loadOntologies(context, manager);
-            ontology = manager.loadOntologyFromOntologyDocument(new FileDocumentSource(context.getOwlSourceFile()));
+        // Load the ontology/ontologies
+        // loadOntologies(context, manager);
+        ontology = manager.loadOntologyFromOntologyDocument(new FileDocumentSource(context.getOwlSourceFile()));
 
-            OWLOntology toGenerateOntology = ontology;
-            if (context.isEnableInference()) {
-                toGenerateOntology = materializeInferences(manager, ontology, context);
-            } else {
-                LOG.info("Reasoner disabled.\n");
-            }
-
-            for (Generator generator : context.getGenerators()) {
-                generator.generate(context, toGenerateOntology);
-            }
-
-        } catch (OWLOntologyCreationException e) {
-            LOG.error("Loading ontology failed.", e);
+        OWLOntology toGenerateOntology = ontology;
+        if (context.isEnableInference()) {
+            toGenerateOntology = materializeInferences(manager, ontology, context);
+        } else {
+            LOG.info("Reasoner disabled.\n");
         }
-        LOG.info("\n----------- Finished Export -----------\n");
+
+        return toGenerateOntology;
     }
 
     private void loadOntologies(GeneratorContext context, OWLOntologyManager manager) {
@@ -124,7 +128,7 @@ public class OWL2Exporter {
         }
     }
 
-    private OWLOntology materializeInferences(OWLOntologyManager manager, OWLOntology ontology, GeneratorContext context)
+    private static OWLOntology  materializeInferences(OWLOntologyManager manager, OWLOntology ontology, GeneratorContext context)
             throws OWLOntologyCreationException {
         LOG.info("Starting Reasoner...\n");
         Reasoner hermit = new Reasoner(new Configuration(), ontology);
@@ -166,7 +170,7 @@ public class OWL2Exporter {
         return inferredAxiomsOntology;
     }
 
-    private class MyInferredPropertyAssertionGenerator extends
+    private static class MyInferredPropertyAssertionGenerator extends
             InferredIndividualAxiomGenerator<OWLPropertyAssertionAxiom<?, ?>> {
 
         @Override
@@ -194,7 +198,7 @@ public class OWL2Exporter {
 
     }
 
-    private class MyInferredClassAssertionAxiomGenerator extends
+    private static class MyInferredClassAssertionAxiomGenerator extends
             InferredIndividualAxiomGenerator<OWLClassAssertionAxiom> {
 
         @Override

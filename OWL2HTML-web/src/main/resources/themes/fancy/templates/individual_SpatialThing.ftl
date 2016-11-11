@@ -86,13 +86,13 @@
 
 <#assign lat = "37.779">
 <#assign long = "-122.3892">
-<#list individual.getDataPropertiesWithName("lat") as latitude>
+<#list individual.getDataProperties("lat") as latitude>
 	<#assign lat = latitude.object.literal!>
 	Latitude: ${latitude.object.literal!}
 	Lat: ${lat!}
 </#list>
 <br/>
-<#list individual.getDataPropertiesWithName("long") as longitude>
+<#list individual.getDataProperties("long") as longitude>
 	<#assign long = longitude.object.literal!>
 	Longitude: ${longitude.object.literal!}
 	Long: ${long!}

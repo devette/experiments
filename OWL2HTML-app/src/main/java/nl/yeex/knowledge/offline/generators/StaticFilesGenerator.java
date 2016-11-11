@@ -12,12 +12,22 @@ import org.slf4j.LoggerFactory;
  * Copy all static files (stylesheets, javascript etc) to the output directory.
  * 
  */
-public class StaticFilesGenerator implements Generator {
+public final class StaticFilesGenerator implements Generator {
     private static final Logger LOG = LoggerFactory.getLogger(StaticFilesGenerator.class);
 
+    @Override
     public void generate(GeneratorContext context, OWLOntology ontology) {
         // does nothing with the ontology. it just copies the static files.
         context.log("\nCopying static files\n");
+        copyStaticFiles(context);
+    }
+
+    /**
+     * Copy the static files that are needed for the generated files. i.e. css and javascript files.
+     *
+     * @param context the generator context, containing configuration of paths.
+     */
+    public static void copyStaticFiles(final GeneratorContext context) {
         try {
             FileUtils.copyDirectory(new File(context.getStaticDirectory()), new File(context.getOutputDirectory()));
         } catch (IOException e) {

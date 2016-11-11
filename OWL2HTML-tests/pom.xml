@@ -16,7 +16,7 @@
 		<maven-surefire-plugin.version>2.4.2</maven-surefire-plugin.version>
 		<junit.version>4.12</junit.version>
 		<cucumber-html.version>0.2.3</cucumber-html.version>
-		<selenium-java.version>2.53.0</selenium-java.version>
+		<selenium-java.version>3.0.0-beta3</selenium-java.version>
 	</properties>
 
 	<build>

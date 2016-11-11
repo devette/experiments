@@ -8,16 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-import org.semanticweb.owlapi.model.OWLAnnotation;
-import org.semanticweb.owlapi.model.OWLAnnotationProperty;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLImportsDeclaration;
-import org.semanticweb.owlapi.model.OWLLiteral;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyID;
+import org.semanticweb.owlapi.model.*;
 
 /**
  * Wrapper class for OWLOntology object. This class hides all visitor patterns
@@ -182,6 +173,14 @@ public class OntologyVO {
 
         Collections.sort((ArrayList<ClassVO>) classes);
         return classes;
+    }
+
+    public ClassVO getClassByName(String name)  {
+        OWLOntologyManager manager = ontology.getOWLOntologyManager();
+        OWLDataFactory factory = manager.getOWLDataFactory();
+        // Generate a class
+        OWLClass owlClass = factory.getOWLClass(IRI.create("http://localhost/rabobank/ontologies/2016/10/demo-1#" + name));
+        return new ClassVO(ontology, owlClass);
     }
 
     /**

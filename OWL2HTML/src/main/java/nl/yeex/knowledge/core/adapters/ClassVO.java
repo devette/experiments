@@ -148,12 +148,23 @@ public class ClassVO extends AbstractOWLEntityVO implements Comparable<ClassVO> 
      * @return classes.
      */
     public Collection<ClassVO> getSubClasses() {
+        return getSubClasses(null);
+    }
+
+    /**
+     * Get all classes that are a direct subclass of this class.
+     *
+     * @return classes.
+     */
+    public Collection<ClassVO> getSubClasses(final String name) {
         Collection<ClassVO> subClasses = new ArrayList<ClassVO>();
         Collection<OWLClassExpression> owlClasses = EntitySearcher.getSubClasses(owlClass, ontology);
         for (OWLClassExpression owlClassExpression : owlClasses) {
             if (!owlClassExpression.isAnonymous()) {
                 ClassVO classVO = new ClassVO(ontology, owlClassExpression.asOWLClass());
-                subClasses.add(classVO);
+                if (name == null || name.equalsIgnoreCase(classVO.getLabel())) {
+                    subClasses.add(classVO);
+                }
             }
         }
         return subClasses;

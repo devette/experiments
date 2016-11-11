@@ -15,8 +15,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.search.EntitySearcher;
 
 /**
- * Wrapper class for OWLOntology object. This class hides all visitor patterns
- * and make the OWLOntology available for template usage.
+ * The label extractor will search for the best matching label given the Entity, the Ontology and the Locale.
  * 
  */
 public class LabelExtractor {
