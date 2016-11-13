@@ -133,7 +133,7 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
 
     /**
      * Gets the all objectproperties related to this individual within at
-     * maximum 'stepsAway' steps away from thid individual. (with duplicates
+     * maximum 'stepsAway' steps away from this individual. (with duplicates
      * removed).
      * 
      * example: <br/>
