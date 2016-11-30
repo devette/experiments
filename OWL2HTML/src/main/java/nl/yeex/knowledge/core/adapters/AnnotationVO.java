@@ -17,8 +17,9 @@ public class AnnotationVO {
     }
 
     public String getProperty() {
-        String iri = annotation.getProperty().getIRI().toString();
-        return iri.substring(iri.indexOf('#') + 1, iri.length());
+//        String iri = annotation.getProperty().getIRI().toString();
+//        return iri.substring(iri.indexOf('#') + 1, iri.length());
+        return annotation.getProperty().getIRI().getShortForm();
     }
 
     public OWLAnnotationValue getValue() {

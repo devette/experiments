@@ -58,6 +58,10 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
     }
 
     public Collection<ObjectPropertyVO> getReferencingAxioms() {
+        return getReferencingAxioms(null, true);
+    }
+
+    public Collection<ObjectPropertyVO> getReferencingAxioms(final String name, final boolean sorted) {
         final Collection<ObjectPropertyVO> referencingAxioms = new HashSet<ObjectPropertyVO>();
         Set<OWLAxiom> owlReferencingAxioms = this.ontology.getReferencingAxioms((OWLEntity) owlIndividual);
         for (OWLAxiom owlAxiom : owlReferencingAxioms) {
@@ -67,12 +71,16 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                     if (!IndividualVO.this.getOWLEntity().getIRI()
                             .equals(axiom.getSubject().asOWLNamedIndividual().getIRI())) {
                         ObjectPropertyVO objectPropertyVO = new ObjectPropertyVO(ontology, axiom);
-                        referencingAxioms.add(objectPropertyVO);
+                        if (name == null || name.equalsIgnoreCase(objectPropertyVO.getPropertyLabel())) {
+                            referencingAxioms.add(objectPropertyVO);
+                        }
                     }
                 }
             });
         }
-        Collections.sort(new ArrayList<ObjectPropertyVO>(referencingAxioms));
+        if (sorted) {
+            Collections.sort(new ArrayList<ObjectPropertyVO>(referencingAxioms));
+        }
         return referencingAxioms;
     }
 
@@ -82,6 +90,37 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
      * @return a sorted collection of objectproperties .
      */
     public Collection<ObjectPropertyVO> getObjectProperties() {
+        return getObjectProperties(null, true);
+    }
+
+    /**
+     * Gets the objectproperties of this individual (sorted) filterd by properties with name.
+     *
+     * @param name the name filter.
+     *
+     * @return a sorted collection of objectproperties .
+     */
+    public Collection<ObjectPropertyVO> getObjectProperties(final String name) {
+        return getObjectProperties(name, true);
+    }
+
+    /**
+     * Lookup a object with the given name.
+     *
+     * @param name
+     * @return only the first object property with the given name.
+     */
+    public ObjectPropertyVO getObjectProperty(final String name)  {
+        Collection<ObjectPropertyVO> objectProperties = getObjectProperties(name, false);
+        return (objectProperties.isEmpty())? null: objectProperties.iterator().next();
+    }
+
+    /**
+     * Gets the objectproperties of this individual (sorted).
+     *
+     * @return a sorted collection of objectproperties .
+     */
+    public Collection<ObjectPropertyVO> getObjectProperties(final String name, final boolean sorted) {
         final Collection<ObjectPropertyVO> objectProperties = new HashSet<ObjectPropertyVO>();
         Set<OWLObjectPropertyAssertionAxiom> objectPropertyAssertionAxioms = ontology
                 .getObjectPropertyAssertionAxioms(owlIndividual);
@@ -90,17 +129,21 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                 @Override
                 public void visit(OWLObjectPropertyAssertionAxiom owlObjectPropertyAssertionAxiom) {
                     ObjectPropertyVO objectPropertyVO = new ObjectPropertyVO(ontology, owlObjectPropertyAssertionAxiom);
-                    objectProperties.add(objectPropertyVO);
+                    if (name == null || name.equalsIgnoreCase(objectPropertyVO.getPropertyLabel())) {
+                        objectProperties.add(objectPropertyVO);
+                    }
                 }
             });
         }
-        Collections.sort(new ArrayList<ObjectPropertyVO>(objectProperties));
+        if (sorted)  {
+            Collections.sort(new ArrayList<ObjectPropertyVO>(objectProperties));
+        }
         return objectProperties;
     }
 
     /**
      * Gets the all objectproperties related to this individual within at
-     * maximum 'stepsAway' steps away from thid individual. (with duplicates
+     * maximum 'stepsAway' steps away from this individual. (with duplicates
      * removed).
      * 
      * example: <br/>
@@ -115,7 +158,7 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
      * 
      * @return a sorted collection of objectproperties .
      */
-    public Map<String, ObjectPropertyVO> getObjectPropertiesGraph(int stepsAway) {
+    public Map<String, ObjectPropertyVO> getObjectPropertiesGraph(final int stepsAway) {
         final Map<String, ObjectPropertyVO> allProperties = new HashMap<String, ObjectPropertyVO>();
         if (stepsAway > 0) {
 
@@ -140,12 +183,33 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
         return allProperties;
     }
 
+
+    /**
+     * Gets the negativeobjectproperties of this individual (sorted).
+     *
+     * @return a sorted collection of (negative) objectproperties .
+     */
+    public Collection<ObjectPropertyVO> getNegativeObjectProperties() {
+        return getNegativeObjectProperties(null, true);
+    }
+
+    /**
+     * Gets the negativeobjectproperties of this individual (sorted) filtered by properties with name.
+     *
+     * @param name the name filter.
+     *
+     * @return a sorted collection of negativeobjectproperties .
+     */
+    public Collection<ObjectPropertyVO> getNegativeObjectProperties(final String name) {
+        return getNegativeObjectProperties(name, true);
+    }
+
     /**
      * Gets the negativeobjectproperties of this individual (sorted).
      * 
      * @return a sorted collection of (negative) objectproperties .
      */
-    public Collection<ObjectPropertyVO> getNegativeObjectProperties() {
+    public Collection<ObjectPropertyVO> getNegativeObjectProperties(final String name, final boolean sorted) {
         final Collection<ObjectPropertyVO> objectProperties = new HashSet<ObjectPropertyVO>();
         Set<OWLNegativeObjectPropertyAssertionAxiom> negativeObjectPropertyAssertionAxioms = ontology
                 .getNegativeObjectPropertyAssertionAxioms(owlIndividual);
@@ -155,13 +219,19 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                 public void visit(OWLNegativeObjectPropertyAssertionAxiom owlNegativeObjectPropertyAssertionAxiom) {
                     ObjectPropertyVO objectPropertyVO = new ObjectPropertyVO(ontology,
                             owlNegativeObjectPropertyAssertionAxiom);
-                    objectProperties.add(objectPropertyVO);
+                    if (name == null || name.equalsIgnoreCase(objectPropertyVO.getPropertyLabel())) {
+                        objectProperties.add(objectPropertyVO);
+                    }
                 }
             });
         }
-        Collections.sort(new ArrayList<ObjectPropertyVO>(objectProperties));
+        if (sorted) {
+            Collections.sort(new ArrayList<ObjectPropertyVO>(objectProperties));
+        }
         return objectProperties;
     }
+
+
 
     /**
      * Gets the dataproperties of this individual (sorted).
@@ -169,30 +239,34 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
      * @return a sorted collection of dataproperties .
      */
     public Collection<DataPropertyVO> getDataProperties() {
-        final Collection<DataPropertyVO> dataProperties = new HashSet<DataPropertyVO>();
-        Set<OWLDataPropertyAssertionAxiom> dataPropertyAssertionAxioms = ontology
-                .getDataPropertyAssertionAxioms(owlIndividual);
-        for (OWLAxiom owlAxiom : dataPropertyAssertionAxioms) {
-            owlAxiom.accept(new OWLAxiomVisitorAdapter() {
-                @Override
-                public void visit(OWLDataPropertyAssertionAxiom owlDataPropertyAssertionAxiom) {
-                    DataPropertyVO dataPropertyVO = new DataPropertyVO(ontology, owlDataPropertyAssertionAxiom);
-                    dataProperties.add(dataPropertyVO);
-                }
-            });
-        }
-
+        final Collection<DataPropertyVO> dataProperties = getDataProperties(null, true);
         Collections.sort(new ArrayList<DataPropertyVO>(dataProperties));
         return dataProperties;
     }
 
     /**
-     * @param nameOfProperty
+     * Lookup a dataproperty with the given name.
+     *
+     * @param name
+     * @return only the first data property with the given name.
+     */
+    public DataPropertyVO getDataProperty(final String name)  {
+        Collection<DataPropertyVO> dataProperties = getDataProperties(name, false);
+        return (dataProperties.isEmpty())? null: dataProperties.iterator().next();
+    }
+
+    public Collection<DataPropertyVO> getDataProperties(final String name)  {
+        return getDataProperties(name, true);
+    }
+
+    /**
+     * @param name the name of the property
      *            the property to include in the result.
+     * @param sorted when true the result will be sorted in natural order.
      * @return a sorted collection of dataproperties filtered by the given
      *         nameOfProperty.
      */
-    public Collection<DataPropertyVO> getDataPropertiesWithName(@Nonnull final String nameOfProperty) {
+    public Collection<DataPropertyVO> getDataProperties(final String name, final boolean sorted)  {
         final Collection<DataPropertyVO> dataProperties = new HashSet<DataPropertyVO>();
         Set<OWLDataPropertyAssertionAxiom> dataPropertyAssertionAxioms = ontology
                 .getDataPropertyAssertionAxioms(owlIndividual);
@@ -201,23 +275,44 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                 @Override
                 public void visit(OWLDataPropertyAssertionAxiom owlDataPropertyAssertionAxiom) {
                     DataPropertyVO dataPropertyVO = new DataPropertyVO(ontology, owlDataPropertyAssertionAxiom);
-                    if (nameOfProperty.equals(dataPropertyVO.getPropertyLabel())) {
+                    if (name == null || name.equalsIgnoreCase(dataPropertyVO.getPropertyLabel())) {
                         dataProperties.add(dataPropertyVO);
                     }
                 }
             });
         }
-
-        Collections.sort(new ArrayList<DataPropertyVO>(dataProperties));
+        if (sorted)  {
+            Collections.sort(new ArrayList<DataPropertyVO>(dataProperties));
+        }
         return dataProperties;
     }
 
     /**
-     * Gets the dataproperties of this individual (sorted).
+     * Gets the negativedataproperties of this individual (sorted).
      * 
      * @return a sorted collection of dataproperties .
      */
     public Collection<DataPropertyVO> getNegativeDataProperties() {
+        return getNegativeDataProperties(null, true);
+    }
+
+
+    /**
+     * Gets the negativedataproperties of this individual (sorted).
+     *
+     * @return a sorted collection of dataproperties .
+     */
+    public Collection<DataPropertyVO> getNegativeDataProperties(final String name) {
+        return getNegativeDataProperties(name, true);
+    }
+
+
+    /**
+     * Gets the dataproperties of this individual (sorted).
+     *
+     * @return a sorted collection of dataproperties .
+     */
+    public Collection<DataPropertyVO> getNegativeDataProperties(final String name, final boolean sorted) {
         final Collection<DataPropertyVO> negativeDataProperties = new HashSet<DataPropertyVO>();
         Set<OWLNegativeDataPropertyAssertionAxiom> negativeDataPropertyAssertionAxioms = ontology
                 .getNegativeDataPropertyAssertionAxioms(owlIndividual);
@@ -226,12 +321,15 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                 @Override
                 public void visit(OWLNegativeDataPropertyAssertionAxiom owlNegativeDataPropertyAssertionAxiom) {
                     DataPropertyVO dataPropertyVO = new DataPropertyVO(ontology, owlNegativeDataPropertyAssertionAxiom);
-                    negativeDataProperties.add(dataPropertyVO);
+                    if (name == null || name.equalsIgnoreCase(dataPropertyVO.getPropertyLabel())) {
+                        negativeDataProperties.add(dataPropertyVO);
+                    }
                 }
             });
         }
-
-        Collections.sort(new ArrayList<DataPropertyVO>(negativeDataProperties));
+        if (sorted) {
+            Collections.sort(new ArrayList<DataPropertyVO>(negativeDataProperties));
+        }
         return negativeDataProperties;
     }
 
@@ -241,6 +339,17 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
      * @return classes.
      */
     public Collection<ClassVO> getClasses() {
+        return getClasses(null, true);
+    }
+
+    /**
+     * Get the classes that are associated with this individual.
+     * @param name the name of a class to filter on.
+     * @param sorted when true the result will be sorted in natural order.
+     *
+     * @return classes.
+     */
+    public Collection<ClassVO> getClasses(final String name, final boolean sorted) {
         final Collection<ClassVO> classes = new HashSet<ClassVO>();
         Collection<OWLClassExpression> owlClassExpressions = EntitySearcher.getTypes(owlIndividual, ontology);
         for (OWLClassExpression owlClassExpression : owlClassExpressions) {
@@ -248,11 +357,15 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
                 @Override
                 public void visit(OWLClass owlClass) {
                     ClassVO classVO = new ClassVO(ontology, owlClass);
-                    classes.add(classVO);
+                    if (name == null || name.equalsIgnoreCase(classVO.getLabel())) {
+                        classes.add(classVO);
+                    }
                 }
             });
         }
-        Collections.sort(new ArrayList<ClassVO>(classes));
+        if (sorted) {
+            Collections.sort(new ArrayList<ClassVO>(classes));
+        }
         return classes;
     }
 

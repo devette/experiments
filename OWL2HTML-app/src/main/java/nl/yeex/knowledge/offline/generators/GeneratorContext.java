@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  * The parameters to specify the context of generation.
  * 
  */
-public class GeneratorContext {
+public final class GeneratorContext {
     private static final Logger LOG = LoggerFactory.getLogger(GeneratorContext.class);
 
     public static final String GENERATION_ONLINE = "online";
@@ -120,26 +120,21 @@ public class GeneratorContext {
 
             // TODO: move to setting the configuration
             generators.add(new StaticFilesGenerator()); // copy all static files
-            generators.add(new IndexGenerator()); // Generate an index.html file
-            generators.add(new ClassesGenerator()); // Generate an output file
+            generators.add(new OntologyGenerator()); // Generate an index.html file
+            generators.add(new ClassGenerator()); // Generate an output file
                                                     // for each class
-            generators.add(new IndividualsGenerator()); // Generate an output
+            generators.add(new IndividualGenerator()); // Generate an output
                                                         // file for each object
                                                         // property in the
                                                         // ontology
-            generators.add(new ObjectPropertiesGenerator()); // Generate an
+            generators.add(new ObjectPropertyGenerator()); // Generate an
                                                              // outputfile for
                                                              // each individual
                                                              // in the ontology
-            generators.add(new DataPropertiesGenerator()); // Generate an
+            generators.add(new DataPropertyGenerator()); // Generate an
                                                            // outputfile for
                                                            // each dataproperty
                                                            // in the ontology
-            // generators.add(new JavaGenerator()); // Generate an outputfile
-            // for each class in the ontology
-
-            // generators.add(new GraphMLGenerator()); // Generate an
-            // graphML.html file
         }
         return generators;
     }

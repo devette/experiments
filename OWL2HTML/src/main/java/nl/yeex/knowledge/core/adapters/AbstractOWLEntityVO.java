@@ -73,7 +73,7 @@ public abstract class AbstractOWLEntityVO {
      * Get the label for this Entity. It will return the first rdfs:label found.
      * Otherwise it will return the IRI part after the #.
      * 
-     * @return
+     * @return A label for the entity
      */
     public String getLabel() {
         if (label == null) {
@@ -92,8 +92,8 @@ public abstract class AbstractOWLEntityVO {
      * Get the locale specific label for this Entity. It will return the first
      * rdfs:label found in the given locale. Otherwise it will return the
      * default label #.
-     * 
-     * @return
+     * @param locale the locale, to search for a label.
+     * @return A label for the entity matching the given locale, or a default label when no match found
      */
     public String getLocalLabel(final Locale locale) {
         return LabelExtractor.getLocalLabel(getOWLEntity(), ontology, locale);
@@ -124,7 +124,7 @@ public abstract class AbstractOWLEntityVO {
      * defining the class name. For performance reasons, the result will be
      * stored in a variable so the replacement is done only once.
      * 
-     * @return
+     * @return a label with underscores replaced by spaces
      */
     public String getLabelReplaceUnderscore() {
         if (label_withoutUnderscores == null) {
