@@ -104,6 +104,16 @@ public class IndividualVO extends AbstractOWLEntityVO implements Comparable<Indi
         return getObjectProperties(name, true);
     }
 
+    /**
+     * Lookup a object with the given name.
+     *
+     * @param name
+     * @return only the first object property with the given name.
+     */
+    public ObjectPropertyVO getObjectProperty(final String name)  {
+        Collection<ObjectPropertyVO> objectProperties = getObjectProperties(name, false);
+        return (objectProperties.isEmpty())? null: objectProperties.iterator().next();
+    }
 
     /**
      * Gets the objectproperties of this individual (sorted).

@@ -175,14 +175,6 @@ public class OntologyVO {
         return classes;
     }
 
-    public ClassVO getClassByName(String name)  {
-        OWLOntologyManager manager = ontology.getOWLOntologyManager();
-        OWLDataFactory factory = manager.getOWLDataFactory();
-        // Generate a class
-        OWLClass owlClass = factory.getOWLClass(IRI.create("http://localhost/rabobank/ontologies/2016/10/demo-1#" + name));
-        return new ClassVO(ontology, owlClass);
-    }
-
     /**
      * Get all imported ontologies.
      * 
