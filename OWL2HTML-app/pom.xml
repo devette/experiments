@@ -25,7 +25,7 @@
    		 <suntools.version>1.5.0</suntools.version>
    		 <graphstream.version>1.2</graphstream.version>
    		 <logback.version>1.0.13</logback.version>
-   		 <groovy.version>2.4.3</groovy.version>
+   		 <groovy.version>2.4.21</groovy.version>
    		 <jetty.version>9.4.12.v20180830</jetty.version>
 	</properties>
 	
